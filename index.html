@@ -208,6 +208,327 @@
             
 
   
+    <article id="post-Git-的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" target="_blank">Git 的基本使用</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        <time datetime="2022-06-19T13:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Git-的基本使用（基于Github）"><a href="#Git-的基本使用（基于Github）" class="headerlink" title="Git 的基本使用（基于Github）"></a>Git 的基本使用（基于Github）</h1><p>设置用户签名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name North-Mi</span><br></pre></td></tr></table></figure>
+
+<p>设置用户邮箱：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email northmi@163.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  注：以上多数时候只需要设置一次，设置后会在本机的该用户的家目录下生成配置文件 <strong>.gitconfig</strong> ，用记事本打开可查看当前配置信息。</p>
+<p>  设置配置邮箱的时候并不会进行邮箱验证，因此及时邮箱不存在也能进行配置，不过还是推荐使用自己的真实邮箱</p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-浅谈C-的面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank">浅谈C++的面向对象</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
+        <time datetime="2022-06-04T12:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="标题：浅谈-c-的面向对象（一）"><a href="#标题：浅谈-c-的面向对象（一）" class="headerlink" title="标题：浅谈 c++ 的面向对象（一）"></a>标题：浅谈 c++ 的面向对象（一）</h1><hr>
+<p>内容：</p>
+<ol>
+<li><p>创建类以及声明对象和对象的成员函数</p>
+<p>  类：</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="keyword">double</span> n;</span><br><span class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">getN</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  在以上代码中，创建了一个名为 <em>Example</em> 的类，有一个成员变量 <em>n</em> 和一个成员函数 <em>getN</em> （也叫作方法）；</p>
+<p>  声明对象及其方法函数调用：</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Example test;</span><br><span class="line">test.n = <span class="number">10</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;该对象的成员为：&quot;</span> &lt;&lt; test.<span class="built_in">getN</span>(); &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<p>  上述代码中创建了一个名为 <em>test</em> 的 <em>Example</em> 对象，设置其成员变量 <em>n</em> 为 <em>10</em> ，并调用了 <em>getN()</em> 方法；</p>
+<p>  输出结果如下：</p>
+<blockquote>
+<p>   该对象的成员为：10</p>
+</blockquote>
+</li>
+<li><p>类访问修饰符</p>
+<p>  访问修饰符用于数据封装，数据封装则是面向对象的一个重要的特点。</p>
+<p>  访问修饰符能防止函数直接访问类的内部成员。</p>
+<p>  访问修饰符有以下三种：</p>
+<ol>
+<li>  public（公共）</li>
+<li>  protected（受保护）</li>
+<li>  private（私有）</li>
+</ol>
+<p>  public（公共成员）：</p>
+<p>  在程序中类的外部是可访问的。可以不使用任何成员函数来设置和获取公有变量的值。</p>
+<p>  示例如下：</p>
+<p>  protected（受保护成员）：</p>
+<p>  private（私有成员）：</p>
+</li>
+<li><p>  构造函数和析构函数</p>
+</li>
+<li><p>  复制构造函数</p>
+</li>
+<li><p>  友元函数</p>
+</li>
+<li><p>  内联函数</p>
+</li>
+<li><p>  this 指针</p>
+</li>
+<li><p>  类指针</p>
+</li>
+<li><p>  类的静态成员</p>
+</li>
+</ol>
+    
+    <a class="article-more-a" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/06/03/test/" target="_blank">test</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/06/03/test/" class="archive-article-date">
+        <time datetime="2022-06-02T16:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><img src="test.assets/image-20220603001200026.png" alt="image-20220603001200026"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">non none</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/06/03/test/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux根目录下的各个目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -814,6 +1135,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
@@ -822,11 +1147,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C语言</a>
+                <a href="javascript:void(0)" class="js-tag color4">non none</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
