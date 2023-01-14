@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Tag: git | NorthMi 的 Blog</title>
+  <title>个人关于RS-232的一些理解以及查询到的相关资料 | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NorthMi 的 Blog">
-<meta property="og:url" content="https://north-mi.github.io/tags/git/index.html">
+  <meta name="description" content="标题：个人关于RS-232的一些理解以及查询到的相关资料 内容今天考到一些关于 RS-232 串口通信的电路，但是书上说的有点笼统，之后自己又去查询了相关资料，做以下记录。 今天在书上看到的模块电路图如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人关于RS-232的一些理解以及查询到的相关资料">
+<meta property="og:url" content="https://north-mi.github.io/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
+<meta property="og:description" content="标题：个人关于RS-232的一些理解以及查询到的相关资料 内容今天考到一些关于 RS-232 串口通信的电路，但是书上说的有点笼统，之后自己又去查询了相关资料，做以下记录。 今天在书上看到的模块电路图如下：">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202301150146559.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202301150222858.png">
+<meta property="article:published_time" content="2023-01-14T17:23:17.000Z">
+<meta property="article:modified_time" content="2023-01-14T18:30:18.424Z">
 <meta property="article:author" content="NorthMi">
+<meta property="article:tag" content="串口通信">
+<meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202301150146559.png">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -201,65 +210,256 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-个人关于RS-232的一些理解以及查询到的相关资料" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2022-06-19T13:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" target="_blank">Git 的基本使用</a>
   
+    <h1 class="article-title" itemprop="name">
+      个人关于RS-232的一些理解以及查询到的相关资料
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" class="archive-article-date">
+        <time datetime="2023-01-14T17:23:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-15</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="标题：个人关于RS-232的一些理解以及查询到的相关资料"><a href="#标题：个人关于RS-232的一些理解以及查询到的相关资料" class="headerlink" title="标题：个人关于RS-232的一些理解以及查询到的相关资料"></a>标题：个人关于RS-232的一些理解以及查询到的相关资料</h1><hr>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>今天考到一些关于 RS-232 串口通信的电路，但是书上说的有点笼统，之后自己又去查询了相关资料，做以下记录。</p>
+<p>今天在书上看到的模块电路图如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202301150146559.png" alt="image-20230115014646268"></p>
+<span id="more"></span>
+
+<p>文字仅有对 RS-232 标准串口的一些特点的描述，就不陈列出来了。</p>
+<p>查询相关资料后了解到， RS-232 总线实际上是规定了有25条线，但在一般情况下，只需使用 3-5 条信号线即可实现全双工通信，采用 3 条信号线（接收线、发送线、信号线）能实现简单的全双工通信。其接口一般为 D 型口。</p>
+<blockquote>
+<p>  一般来说，其常用的 9 针插头的线功能分别如下：</p>
+<p>  (1)接收线信号检出( Received Line Signal Detection，RSD)——用来表示DCE已接通通信链路，告知DTE准备接收数据。当本地的 MODEM收到由通信链路另一端(远地)的MODEM送来的载波信号时，使RLSD信号有效，通知终端准备接收，并且由MODEM将接收下来的载波信号解调成数字数据后，沿接收数据线RXD送到终端。此线也叫作数据载波检出(Data Carrier detection，DCD)线。 </p>
+<p>  (2)接收数据( Received data，RXD)——通过RXD线终端接收从 MODEM发来的串行数据(DCE→DTE)。 </p>
+<p>  (3)发送数据( Transmitted data，TXD)——通过TXD终端将串行数据发送到 MODEM(DTE→DCE)。</p>
+<p>  (4)数据终端准备好( Data Terminal Ready，DTR)——有效时(ON)状态，表明数据终端可以使用。</p>
+<p>  (5)地线-GND。 [3] </p>
+<p>  (6)数据装置准备好( Data Set ready，DSR)——有效时(ON)状态，表明通信装置处于可以使用的状态。</p>
+<p>  (7)请求发送( Request to Send)——用来表示DTE请求DCE发送数据，即当终端要发送数据时，使该信号有效(ON状态)，向 MODEM请求发送。它用来控制 MODEM是否要进入发送状态。</p>
+<p>  (8)清除发送( Clear to Send，CTS)―用来表示DCE准备好接收DTE发来的数据，是对请求发送信号RTS的响应信号。当 MODEM已准备好接收终端传来的数据并向前发送时，使该信号有效，通知终端开始沿发送数据线TXD发送数据。</p>
+<p>  (9)振铃指示( Ringing，R)——当 MODEM收到交换台送来的振铃呼叫信号时，使该信号有效(ON状态)，通知终端，已被呼叫。</p>
+<p>  <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232/2022036#reference-[2]-112004-wrap">RS-232_百度百科 (baidu.com)</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232C/8156015">RS-232C_百度百科 (baidu.com)</a></p>
+</blockquote>
+<p>而在上图中，其要经过 MAX232 来进行电平调解，则是因为 RS-232 的电气特性与单片机常使用 TTL 电平不同，其规则为：</p>
+<p>在TXD和RXD引脚上电平定义：</p>
+<p>逻辑1=-3V~-15V；</p>
+<p>在RTS、CTS、DSR、DTR和CD等控制线上电平定义：</p>
+<p>信号有效=+3V~+15V；</p>
+<p>信号无效=-3V~-15V；</p>
+<p>以上规定说明了RS-232C标准对应逻辑电平的定义。注意：对于介于-3V ~ +3V之间的电压处于模糊区电位，此部分电压将使得计算机无法正确判断输出信号的意义，可能得到0，也可能得到1，如此得到的结果是不可信的，在通讯时候的体系是会出现大量误码，造成通讯失败。因此，实际工作时，应保证传输的电平在+3 ~ +15V 或-3V ~ -15V 之间。</p>
+<p>但是，一般来说个人电脑上还装有 RS-232 接口的已经很少了，一般来说，使用的时候都会通过 USB 转 RS-232 接口的电路来实现计算机与单片机的串口通信，用于通信、程序烧录等方面。关于 USB 与 RS-232 接口的转换电路的话，网上也有很多，甚至淘宝客服的资料里也有一堆原理图，这里也不啰嗦了。</p>
+<p>关于 MAX232 ：</p>
+<p>MAX232 芯片的作用：是将单片机输出的 TTL 电平转换成 PC 机能接收的 232 电平或将 PC 机输出的 232 电平转换成单片机能接收的 TTL 电平。</p>
+<p>其原理图及引脚如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202301150222858.png" alt="image-20230115022203301"></p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><em>《常用驱动电路设计及应用》</em></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232/2022036#reference-[2]-112004-wrap">RS-232_百度百科 (baidu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232C/8156015">RS-232C_百度百科 (baidu.com)</a></p>
+<p>[Maxim IC MAX232多通道RS-232驱动器/接收器 - Maxim | Mouser](<a target="_blank" rel="noopener" href="https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&amp;utm_medium=cpc&amp;utm_campaign=Maxim">https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&amp;utm_medium=cpc&amp;utm_campaign=Maxim</a> Supplier&amp;utm_term=Phrase max 232)</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          NorthMi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://north-mi.github.io/2023/01/15/个人关于RS-232的一些理解以及查询到的相关资料/" title="个人关于RS-232的一些理解以及查询到的相关资料" target="_blank">https://north-mi.github.io/2023/01/15/个人关于RS-232的一些理解以及查询到的相关资料/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">串口通信</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">嵌入式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/26/c-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++的类型转换</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -300,9 +500,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
