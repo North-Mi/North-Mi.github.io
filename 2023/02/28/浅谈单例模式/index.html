@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Tag: 串口通信 | NorthMi 的 Blog</title>
+  <title>浅谈单例模式 | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NorthMi 的 Blog">
-<meta property="og:url" content="https://north-mi.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/index.html">
+  <meta name="description" content="关于单例模式单例模式是一种设计模式，其中只有一个实例（instance）存在。 单例模式在C++中的实现方式是，通过使用一个静态成员变量来确保只有一个实例存在，并且可以在程序的任何地方访问它。 通常可以使用一个私有的构造函数和一个静态的工厂函数来实现单例模式。 此外，可以使用模板和智能指针来实现更加灵活的单例模式。不过此处不过多赘述。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈单例模式">
+<meta property="og:url" content="https://north-mi.github.io/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
+<meta property="og:description" content="关于单例模式单例模式是一种设计模式，其中只有一个实例（instance）存在。 单例模式在C++中的实现方式是，通过使用一个静态成员变量来确保只有一个实例存在，并且可以在程序的任何地方访问它。 通常可以使用一个私有的构造函数和一个静态的工厂函数来实现单例模式。 此外，可以使用模板和智能指针来实现更加灵活的单例模式。不过此处不过多赘述。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281304037.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281303918.png">
+<meta property="article:published_time" content="2023-02-28T08:48:31.000Z">
+<meta property="article:modified_time" content="2023-02-28T18:09:26.900Z">
 <meta property="article:author" content="NorthMi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281304037.png">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -149,80 +156,225 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-浅谈单例模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" class="archive-article-date">
-        <time datetime="2023-01-15T06:23:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-15</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" target="_blank">个人关于RS-232的一些理解以及查询到的相关资料</a>
   
+    <h1 class="article-title" itemprop="name">
+      浅谈单例模式
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">串口通信</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">嵌入式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+<a href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-02-28T08:48:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-28</time>
+</a>
+
   
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">760字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="关于单例模式"><a href="#关于单例模式" class="headerlink" title="关于单例模式"></a>关于单例模式</h1><p>单例模式是一种设计模式，其中只有一个实例（instance）存在。</p>
+<p>单例模式在C++中的实现方式是，通过使用一个静态成员变量来确保只有一个实例存在，并且可以在程序的任何地方访问它。</p>
+<p>通常可以使用一个私有的构造函数和一个静态的工厂函数来实现单例模式。</p>
+<p>此外，可以使用模板和智能指针来实现更加灵活的单例模式。不过此处不过多赘述。</p>
+<span id="more"></span>
+
+<h1 id="单例模式实现步骤（-c-）"><a href="#单例模式实现步骤（-c-）" class="headerlink" title="单例模式实现步骤（ c++ ）"></a>单例模式实现步骤（ c++ ）</h1><ol>
+<li> 将类的构造方法定义为私有方法；</li>
+<li> 定义一个私有的类的静态实例；</li>
+<li> 提供一个公有的获取静态实例的静态方法；</li>
+</ol>
+<hr>
+<p>最常见的实现方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Singalton.h*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __SINGALTON_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __SINGALTON_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singalton</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line">    <span class="keyword">static</span> Singalton* m_instance;</span><br><span class="line">    string m_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">Singalton</span>(<span class="comment">/* args */</span>):<span class="built_in">m_name</span>(<span class="string">&quot;YA_Singalton_AY&quot;</span>)&#123;&#125;</span><br><span class="line">    <span class="built_in">Singalton</span>(<span class="keyword">const</span> Singalton&amp; s)&#123;&#125;;</span><br><span class="line">    ~<span class="built_in">Singalton</span>()&#123;&#125;</span><br><span class="line">    Singalton&amp; <span class="keyword">operator</span>=(Singalton&amp; s)&#123;&#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> Singalton* <span class="built_in">getInstance</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 若没有创建单例，则调用构造函数进行创建</span></span><br><span class="line">        <span class="keyword">if</span> (m_instance == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            m_instance = <span class="keyword">new</span> <span class="built_in">Singalton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m_instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; m_name &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 将接口指针指向 NULL，此时没有创建单例</span></span><br><span class="line">Singalton* Singalton::m_instance = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Singalton.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Singalton::<span class="built_in">getInstance</span>()-&gt;<span class="built_in">show</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281304037.png" alt="image-20230228130420000"></p>
+<hr>
+<p>单例的模板实现：</p>
+<p>模板：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> ddd</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">namespace</span> singleton</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* function */</span></span><br><span class="line">    <span class="built_in">Singleton</span>();</span><br><span class="line">    <span class="built_in">Singleton</span>(<span class="keyword">const</span> Singleton&lt;T&gt;&amp;);</span><br><span class="line">    ~<span class="built_in">Singleton</span>();</span><br><span class="line">    Singleton&lt;T&gt;&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> Singleton&amp;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line">    <span class="keyword">static</span> T* m_instance;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> T* <span class="title">getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m_instance == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            m_instance = <span class="keyword">new</span> <span class="built_in">T</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m_instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">T* Singleton&lt;T&gt;::m_instance = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">//singleton</span></span><br></pre></td></tr></table></figure>
+
+<p>Class B：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span>&lt;</span>B&gt;;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line">    string m_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* function */</span></span><br><span class="line">    <span class="built_in">B</span>() : <span class="built_in">m_name</span>(<span class="string">&quot;Singleton_B&quot;</span>)&#123;&#125;</span><br><span class="line">    <span class="built_in">B</span>(<span class="keyword">const</span> B&amp;);</span><br><span class="line">    ~<span class="built_in">B</span>();</span><br><span class="line">    B&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> B&amp;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 在模板类中实现了静态方法 getInstance，所以在此处不用再写 </span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; m_name &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281303918.png" alt="image-20230228130335782"></p>
+<p>可见，实现模板之后，创建单例方便许多，在需要编写多个单例对象的时候更加方便。</p>
+<h1 id="单例模式的应用场景"><a href="#单例模式的应用场景" class="headerlink" title="单例模式的应用场景"></a>单例模式的应用场景</h1><ol>
+<li> 数据库连接管理：数据库连接池就是一种典型的应用，它维护一个连接池容器，里面存放着所有的数据库连接； </li>
+<li> 线程池：线程池也是一个典型的应用，它维护一个存放所有空闲线程的容器； </li>
+<li>  缓存管理：缓存也是一个典型的应用，它可以将一些常用的数据进行缓存，以提高系统性能； </li>
+<li>  日志管理：日志也是一个典型的应用，它可以将系统运行过程中产生的日志信息进行统一的管理和存储； </li>
+<li>  配置管理：配置也是一个典型的应用，它可以将系统的配置参数进行统一的管理和存储。</li>
+</ol>
+<p>应用场景的话，之后有时间再把写的代码挂上来。</p>
 
     
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          NorthMi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://north-mi.github.io/2023/02/28/浅谈单例模式/" title="浅谈单例模式" target="_blank">https://north-mi.github.io/2023/02/28/浅谈单例模式/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">个人关于RS-232的一些理解以及查询到的相关资料</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -251,9 +403,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
