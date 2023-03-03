@@ -6,36 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Git 的基本使用 | NorthMi 的 Blog</title>
+  <title>浅谈C++的面向对象 | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Git 的基本使用（基于Github）设置用户签名： 1git config --global user.name North-Mi  设置用户邮箱： 1git config --global user.email northmi@163.com     注：以上多数时候只需要设置一次，设置后会在本机的该用户的家目录下生成配置文件 .gitconfig ，用记事本打开可查看当前配置信息。   设置">
+  <meta name="description" content="标题：浅谈 c++ 的面向对象（一） 内容：  创建类以及声明对象和对象的成员函数   类：   1234567class Example&amp;#123;    public:    	double n;    	double getN()&amp;#123;            return n;        &amp;#125;&amp;#125;    在以上代码中，创建了一个名为 Example 的类，有一个成员">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 的基本使用">
-<meta property="og:url" content="https://north-mi.github.io/2022/06/20/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="浅谈C++的面向对象">
+<meta property="og:url" content="https://north-mi.github.io/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
-<meta property="og:description" content="Git 的基本使用（基于Github）设置用户签名： 1git config --global user.name North-Mi  设置用户邮箱： 1git config --global user.email northmi@163.com     注：以上多数时候只需要设置一次，设置后会在本机的该用户的家目录下生成配置文件 .gitconfig ，用记事本打开可查看当前配置信息。   设置">
+<meta property="og:description" content="标题：浅谈 c++ 的面向对象（一） 内容：  创建类以及声明对象和对象的成员函数   类：   1234567class Example&amp;#123;    public:    	double n;    	double getN()&amp;#123;            return n;        &amp;#125;&amp;#125;    在以上代码中，创建了一个名为 Example 的类，有一个成员">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.3j9uazgxw1q0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.sniwo7frlpc.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.6gl74zhe1pg0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.75whdij3z8s0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.4sucmcutm7q0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.1ykol66zmew0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.6xisegvj7740.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.2hwq3nvmdaw0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.46hwdyzxlas0.webp">
-<meta property="og:image" content="c:/Users/dengshitao/AppData/Roaming/Typora/typora-user-images/image-20220620144737956.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.3ko96z0yz8c0.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.23hfbycu4vmo.webp">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.5m5l7r6nxuw0.webp">
-<meta property="article:published_time" content="2022-06-20T01:44:55.000Z">
-<meta property="article:modified_time" content="2022-06-20T07:21:29.420Z">
+<meta property="article:published_time" content="2022-06-04T12:23:56.000Z">
+<meta property="article:modified_time" content="2022-08-26T10:18:09.721Z">
 <meta property="article:author" content="NorthMi">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.3j9uazgxw1q0.webp">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -164,22 +151,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git-的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-浅谈C-的面向对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Git 的基本使用
+      浅谈C++的面向对象
     </h1>
   
 
 
   
   
-<a href="/2022/06/20/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2022-06-20T01:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-20</time>
+<a href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
+        <time datetime="2022-06-04T12:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
 </a>
 
   
@@ -192,7 +179,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">974字</span>
+      <span class="post-count">331字</span>
     </span>
   </span>
 
@@ -201,7 +188,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -212,97 +199,55 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Git-的基本使用（基于Github）"><a href="#Git-的基本使用（基于Github）" class="headerlink" title="Git 的基本使用（基于Github）"></a>Git 的基本使用（基于Github）</h1><p>设置用户签名：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name North-Mi</span><br></pre></td></tr></table></figure>
+    <h1 id="标题：浅谈-c-的面向对象（一）"><a href="#标题：浅谈-c-的面向对象（一）" class="headerlink" title="标题：浅谈 c++ 的面向对象（一）"></a>标题：浅谈 c++ 的面向对象（一）</h1><hr>
+<p>内容：</p>
+<ol>
+<li><p>创建类以及声明对象和对象的成员函数</p>
+<p>  类：</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="keyword">double</span> n;</span><br><span class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">getN</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>设置用户邮箱：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email northmi@163.com</span><br></pre></td></tr></table></figure>
+<p>  在以上代码中，创建了一个名为 <em>Example</em> 的类，有一个成员变量 <em>n</em> 和一个成员函数 <em>getN</em> （也叫作方法）；</p>
+<p>  声明对象及其方法函数调用：</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Example test;</span><br><span class="line">test.n = <span class="number">10</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;该对象的成员为：&quot;</span> &lt;&lt; test.<span class="built_in">getN</span>(); &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
 
+<p>  上述代码中创建了一个名为 <em>test</em> 的 <em>Example</em> 对象，设置其成员变量 <em>n</em> 为 <em>10</em> ，并调用了 <em>getN()</em> 方法；</p>
+  <span id="more"></span>
+
+<p>  输出结果如下：</p>
 <blockquote>
-<p>  注：以上多数时候只需要设置一次，设置后会在本机的该用户的家目录下生成配置文件 <strong>.gitconfig</strong> ，用记事本打开可查看当前配置信息。</p>
-<p>  设置配置邮箱的时候并不会进行邮箱验证，因此及时邮箱不存在也能进行配置，不过还是推荐使用自己的真实邮箱</p>
+<p>   该对象的成员为：10</p>
 </blockquote>
-<span id="more"></span>
-
-<hr>
-<p>初始化本地库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>该命令会在本地项目文件夹中生成一个 <strong>.git</strong> 的文件夹，里面有 Git 自动生成的相关配置文件。</p>
-<hr>
-<p>查看本地库状态：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.3j9uazgxw1q0.webp" alt="image"></p>
-<p>在以上截图中，第一行 <em>On branch master</em> 表明了当前所在的分支 master，默认情况下大多都是 master。</p>
-<p>第二行 <em>No commits yet</em> 表明当前我（该用户）还没有在该库中提交过任何东西。</p>
-<p>第三行 <em>nothing to commit (create/copy files and use “git add” to track)</em> 表明没有东西需要提交。<img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.sniwo7frlpc.webp" alt="image"></p>
-<p>在该目录下创建一个 <em>helloworld.c</em> 后，再次查看，发现 Git 提示有文件没有提交。</p>
-<hr>
-<p>将本地文件添加到暂存区：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add （文件名）</span><br></pre></td></tr></table></figure>
-
-<p>如上，我使用 <em>git add helloworld.c</em> 将该文件添加到暂存区，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.6gl74zhe1pg0.webp" alt="image"></p>
-<p>出现如上警告。</p>
-<blockquote>
-<p>  这个警告是表明回车将被替换，因为 linux 下的回车和 windows 下的回车的编码并不相同，有兴趣的可以去了解一下。</p>
-</blockquote>
-<blockquote>
-<p>  此时，再查看当前库的状态：</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.75whdij3z8s0.webp" alt="image"></p>
-<p>  此时表明该文件已经被 Git 追踪到了，但还只是存在与暂存区之中。</p>
-</blockquote>
-<hr>
-<p>从暂存区删除文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached (文件名)</span><br></pre></td></tr></table></figure>
-
-<p>加入此时我发现该文件不对，那我们能从暂存区删除该文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.4sucmcutm7q0.webp" alt="image"></p>
-<p>正如上面的 Git 给的提示一样，使用 <strong>git rm</strong> 命令就能将文件从暂存区删除，但只是在 Git 的暂存区中删除，本地文件依旧存在。<img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.1ykol66zmew0.webp" alt="image"></p>
-<p>此时再查看本地库状态，会发现 Git 提示未追踪该文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.6xisegvj7740.webp" alt="image"></p>
-<hr>
-<p>提交本地库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;(日志信息)&quot; （文件名）</span><br></pre></td></tr></table></figure>
-
-<p>将正确的文件添加进缓存区之后，我们就可以将本地库进行提交了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.2hwq3nvmdaw0.webp" alt="image"></p>
-<p>Git 表明：master 分支进行了提交，日志信息为“My first test commit”，版本号（前七位）为 <strong>ce9d00a</strong> ，提交 1 个文件，共 8 行。</p>
-<p>此时查看本地库状态。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.46hwdyzxlas0.webp" alt="image"></p>
-<blockquote>
-<p>  此时表明，当前处于 master 分支，没有文件需要提交，但并没有像之前一样提示 <strong>No commits yet</strong> </p>
-<p>  可以使用 <strong>git log</strong> 命令查看 Git 日志。</p>
-<p>  <img src="C:/Users/dengshitao/AppData/Roaming/Typora/typora-user-images/image-20220620144737956.png" alt="image-20220620144737956"></p>
-<p>  此时显示出来的版本号为完整的版本号。</p>
-<p>  虽然不进行添加暂存区也能直接进行提交操作，但一般还是建议添加。</p>
-</blockquote>
-<hr>
-<p>修改文件：</p>
-<p>直接修改，再使用提交命令或者添加进缓存区再提交即可。</p>
-<p>修改之后查看本地库状态。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.3ko96z0yz8c0.webp" alt="image"></p>
-<p>并且此时 HEAD 指针指向的是第二次提交的版本。</p>
-<hr>
-<p>查看历史版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-
-<p>以上两个命令均可以查看历史版本，不过第一个命令是简略版，第二个命令是详细版。</p>
-<p>版本回溯：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard （版本号）</span><br></pre></td></tr></table></figure>
-
-<p>其中。版本号可以为简写（前七位），也可以为完整版。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.23hfbycu4vmo.webp" alt="image"></p>
-<p>此时再查看简略日志，可以发现版本回溯到了第一版，并且自动填充了日志信息：<em>reset: moving to ce9d00af325cd1fb42b2752973c16bbd9fcafd0f</em></p>
-<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img@master/image.5m5l7r6nxuw0.webp" alt="image"></p>
-<blockquote>
-<p>  版本回溯会同时影响本地的项目文件</p>
-<p>  关于版本号：</p>
-<p>  我们可以在 <em>.git</em> 目录下找到一个名为 <em>HEAD</em> 的文件，其表示当前的分支。我当前分支为 master</p>
-<p>  另外在 <em>.git\refs\heads</em> 下有一个 <em>master</em> 文件，里面存放着当前分支指针指向的版本号。</p>
-</blockquote>
-<hr>
+</li>
+<li><p>类访问修饰符</p>
+<p>  访问修饰符用于数据封装，数据封装则是面向对象的一个重要的特点。</p>
+<p>  访问修饰符能防止函数直接访问类的内部成员。</p>
+<p>  访问修饰符有以下三种：</p>
+<ol>
+<li>  public（公共）</li>
+<li>  protected（受保护）</li>
+<li>  private（私有）</li>
+</ol>
+<p>  public（公共成员）：</p>
+<p>  在程序中类的外部是可访问的。可以不使用任何成员函数来设置和获取公有变量的值。</p>
+<p>  示例如下：</p>
+<p>  protected（受保护成员）：</p>
+<p>  private（私有成员）：</p>
+</li>
+<li><p>  构造函数和析构函数</p>
+</li>
+<li><p>  复制构造函数</p>
+</li>
+<li><p>  友元函数</p>
+</li>
+<li><p>  内联函数</p>
+</li>
+<li><p>  this 指针</p>
+</li>
+<li><p>  类指针</p>
+</li>
+<li><p>  类的静态成员</p>
+</li>
+</ol>
 
     
 
@@ -317,7 +262,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://north-mi.github.io/2022/06/20/Git-的基本使用/" title="Git 的基本使用" target="_blank">https://north-mi.github.io/2022/06/20/Git-的基本使用/</a>
+          <a href="https://north-mi.github.io/2022/06/04/浅谈C-的面向对象/" title="浅谈C++的面向对象" target="_blank">https://north-mi.github.io/2022/06/04/浅谈C-的面向对象/</a>
         </li>
         
         <li>
@@ -339,7 +284,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
         		</li>
       		
 		</ul>
@@ -395,7 +344,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2022/06/20/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -410,18 +359,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/08/27/c-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          c++的类型转换
+          Git 的基本使用
         
       </div>
     </a>
   
   
-    <a href="/2022/06/05/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浅谈C++的面向对象</div>
+    <a href="/2022/06/03/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">test</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -575,10 +524,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">non none</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">串口通信</a>
               </li>
              
@@ -587,11 +532,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">non none</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,10 +561,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
             
             <div class="clearfix"></div>
