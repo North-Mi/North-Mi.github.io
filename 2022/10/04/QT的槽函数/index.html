@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Tag: 面向对象 | NorthMi 的 Blog</title>
+  <title>QT的槽函数 | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NorthMi 的 Blog">
-<meta property="og:url" content="https://north-mi.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+  <meta name="description" content="QT 主要通过信号和槽连接控件与代码。 基本格式为： connect（信号的发送者， 发送的具体信号（signal）， 信号的接受者， 信号的处理（槽函数：slot））    信号槽的优点：   松散耦合，信号发送端 和 信号接收端 本身是没有联系的，通过 connect 连接，将两端 耦合 在一起  12connect(btn, &amp;QPushButton::clicked, this,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QT的槽函数">
+<meta property="og:url" content="https://north-mi.github.io/2022/10/04/QT%E7%9A%84%E6%A7%BD%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
+<meta property="og:description" content="QT 主要通过信号和槽连接控件与代码。 基本格式为： connect（信号的发送者， 发送的具体信号（signal）， 信号的接受者， 信号的处理（槽函数：slot））    信号槽的优点：   松散耦合，信号发送端 和 信号接收端 本身是没有联系的，通过 connect 连接，将两端 耦合 在一起  12connect(btn, &amp;QPushButton::clicked, this,">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040853233.png">
+<meta property="article:published_time" content="2022-10-04T00:46:40.000Z">
+<meta property="article:modified_time" content="2023-03-04T00:54:13.271Z">
 <meta property="article:author" content="NorthMi">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="QT">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040853233.png">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -145,69 +153,279 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-QT的槽函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-        <time datetime="2022-06-04T12:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank">浅谈C++的面向对象</a>
   
+    <h1 class="article-title" itemprop="name">
+      QT的槽函数
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+<a href="/2022/10/04/QT%E7%9A%84%E6%A7%BD%E5%87%BD%E6%95%B0/" class="archive-article-date">
+        <time datetime="2022-10-04T00:46:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-04</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">611字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>QT 主要通过信号和槽连接控件与代码。</p>
+<p>基本格式为：</p>
+<p><em>connect（信号的发送者， 发送的具体信号（signal）， 信号的接受者， 信号的处理（槽函数：slot））</em></p>
+<blockquote>
+<p>  信号槽的优点：</p>
+<p>  松散耦合，信号发送端 和 信号接收端 本身是没有联系的，通过 connect 连接，将两端 <strong>耦合</strong> 在一起</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">connect</span>(btn, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;myWidget::close);</span><br><span class="line"><span class="comment">// 点击 btn 关闭窗口</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="自定义信号和槽"><a href="#自定义信号和槽" class="headerlink" title="自定义信号和槽"></a>自定义信号和槽</h2><blockquote>
+<p>  信号函数：</p>
+<p>  自定义信号写在 <strong>signals</strong> 下</p>
+<p>  返回值为 <strong>void</strong>，只需要声明。不需要实现</p>
+<p>  可以有参数，可以重载</p>
+</blockquote>
+<blockquote>
+<p>  槽函数：</p>
+<p>  早期 QT 版本，必须要写到 public slots 中，高级版本可以写在 public 或者全局中</p>
+<p>  返回值 <strong>void</strong>，需要声明，也需要实现</p>
+<p>  可以有参数，可以重载</p>
+</blockquote>
+<blockquote>
+<p>  emit 关键字：</p>
+<p>  触发信号</p>
+</blockquote>
+<p>在 Teacher 类中，定义信号函数：hungry（）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> :</span> <span class="keyword">public</span> QObject</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">Teacher</span><span class="params">(QObject *parent = <span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">signals:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">hungry</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在 Student 类中，定义槽函数 treat（）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> :</span> <span class="keyword">public</span> QObject</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">Student</span><span class="params">(QObject *parent = <span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    槽函数</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">signals:</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在 widget 类中定义两个指针指向两个新创建的类，并且实现相关函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Widget</span> :</span> <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Widget</span>(QWidget *parent = <span class="literal">nullptr</span>);</span><br><span class="line">    ~<span class="built_in">Widget</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Ui::Widget *ui;</span><br><span class="line"></span><br><span class="line">    Teacher *tch ;</span><br><span class="line">    Student *stu ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">classIsOver</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Widget::<span class="built_in">Widget</span>(QWidget *parent)</span><br><span class="line">    : <span class="built_in">QWidget</span>(parent)</span><br><span class="line">    , <span class="built_in">ui</span>(<span class="keyword">new</span> Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;<span class="built_in">setupUi</span>(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个老师对象</span></span><br><span class="line">    <span class="keyword">this</span>-&gt;tch = <span class="keyword">new</span> <span class="built_in">Teacher</span>(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">//    创建一个学生对象</span></span><br><span class="line">    <span class="keyword">this</span>-&gt;stu = <span class="keyword">new</span> <span class="built_in">Student</span>(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">connect</span>(tch, &amp;Teacher::hungry, stu, &amp;Student::treat);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    调用下课函数</span></span><br><span class="line">    <span class="built_in">classIsOver</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Widget::classIsOver</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    emit tch-&gt;<span class="built_in">hungry</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="自定义信号和槽发生重载情况的解决"><a href="#自定义信号和槽发生重载情况的解决" class="headerlink" title="自定义信号和槽发生重载情况的解决"></a>自定义信号和槽发生重载情况的解决</h2><p>解决方法：使用函数指针定位，进一步精准实现相关函数的传递</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in"><span class="keyword">void</span></span> (Teacher:: *teacherHungry)(QString foodName) = &amp;Teacher :: hungry;</span><br><span class="line"><span class="built_in"><span class="keyword">void</span></span> (Student:: *studentTreat)(QString foodName) = &amp;Student :: treat;</span><br></pre></td></tr></table></figure>
+
+<p>函数指针，即：</p>
+<p>函数返回值类型 (* 指针变量名) (函数参数列表) = 函数地址;</p>
+<p>可以尝试加上函数变量作用限制域；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040853233.png" alt="image-20230304085315189"></p>
+<blockquote>
+<p>  关于字符串有双引号的解决方法：</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foodname.<span class="built_in">toUtf8</span>().<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h2 id="信号连信号"><a href="#信号连信号" class="headerlink" title="信号连信号"></a>信号连信号</h2><p>与信号与槽的链接类似，但是信号与信号链接之后，触发一个信号，会同时触发另一个信号</p>
+<p>断开信号：</p>
+<p><strong>disconnect（发送端，发送信号，接收端，接收槽）</strong></p>
+<p>与 connect 的函数使用方法类似</p>
+<p><strong>信号和槽函数的参数类型必须一一对应</strong></p>
+<p>但是<strong>信号的参数个数可以多于槽函数的参数个数</strong></p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          NorthMi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://north-mi.github.io/2022/10/04/QT的槽函数/" title="QT的槽函数" target="_blank">https://north-mi.github.io/2022/10/04/QT的槽函数/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">QT</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2022/10/04/QT%E7%9A%84%E6%A7%BD%E5%87%BD%E6%95%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          个人关于RS-232的一些理解以及查询到的相关资料
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/26/c-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++的类型转换</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -236,9 +454,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
