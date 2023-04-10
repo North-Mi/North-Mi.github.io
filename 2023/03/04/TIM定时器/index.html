@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Lamda表达式 | NorthMi 的 Blog</title>
+  <title>TIM定时器（一） | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="本质上就是一个匿名函数。 格式： 1[ capture ] ( params ) opt -&gt; ret &amp;#123; body; &amp;#125;;  声明并调用： 123&#x2F;&#x2F; [ capture ] ( params ) opt -&gt; ret &amp;#123; body; &amp;#125;();&#x2F;&#x2F; 例如：[&#x3D;] -&gt; int &amp;#123;return a&amp;#125;();  其中 cap">
+  <meta name="description" content="定时器介绍定时器（TIM，timer）可以对输入的时钟进行计数（stm32 中多为 72MHz），并在计数值达到设定值时触发中断。 定时器分类：    定时器 总线    高级控制定时器（TIM1 和 TIM8） APB 2   通用定时器（TIM2、TIM3、TIM4 和 TIM5） APB 1   基本定时器（TIM6 和 TIM7） APB 1      高级定时器  高级控制定时器（TIM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lamda表达式">
-<meta property="og:url" content="https://north-mi.github.io/2022/10/15/Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="TIM定时器（一）">
+<meta property="og:url" content="https://north-mi.github.io/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
-<meta property="og:description" content="本质上就是一个匿名函数。 格式： 1[ capture ] ( params ) opt -&gt; ret &amp;#123; body; &amp;#125;;  声明并调用： 123&#x2F;&#x2F; [ capture ] ( params ) opt -&gt; ret &amp;#123; body; &amp;#125;();&#x2F;&#x2F; 例如：[&#x3D;] -&gt; int &amp;#123;return a&amp;#125;();  其中 cap">
+<meta property="og:description" content="定时器介绍定时器（TIM，timer）可以对输入的时钟进行计数（stm32 中多为 72MHz），并在计数值达到设定值时触发中断。 定时器分类：    定时器 总线    高级控制定时器（TIM1 和 TIM8） APB 2   通用定时器（TIM2、TIM3、TIM4 和 TIM5） APB 1   基本定时器（TIM6 和 TIM7） APB 1      高级定时器  高级控制定时器（TIM">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/dengshitao/AppData/Roaming/Typora/typora-user-images/image-20230304085747410.png">
-<meta property="article:published_time" content="2022-10-15T00:55:03.000Z">
-<meta property="article:modified_time" content="2023-03-04T01:05:29.409Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303041637852.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303041638692.png">
+<meta property="article:published_time" content="2023-03-04T07:42:54.000Z">
+<meta property="article:modified_time" content="2023-03-04T09:51:20.347Z">
 <meta property="article:author" content="NorthMi">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="Lamda 表达式">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/dengshitao/AppData/Roaming/Typora/typora-user-images/image-20230304085747410.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303041637852.png">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -153,22 +153,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Lamda表达式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-TIM定时器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Lamda表达式
+      TIM定时器（一）
     </h1>
   
 
 
   
   
-<a href="/2022/10/15/Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2022-10-15T00:55:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-15</time>
+<a href="/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/" class="archive-article-date">
+        <time datetime="2023-03-04T07:42:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-04</time>
 </a>
 
   
@@ -181,7 +181,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">610字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -190,7 +190,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -201,39 +201,90 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>本质上就是一个匿名函数。</p>
-<p>格式：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ capture ] ( params ) opt -&gt; ret &#123; body; &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>声明并调用：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [ capture ] ( params ) opt -&gt; ret &#123; body; &#125;();</span></span><br><span class="line"><span class="comment">// 例如：</span></span><br><span class="line">[=] -&gt; <span class="keyword">int</span> &#123;<span class="keyword">return</span> a&#125;();</span><br></pre></td></tr></table></figure>
-
-<p>其中 capture 是捕获列表，params 是参数表，opt 是函数选项，ret 是返回值类型，body是函数体。</p>
-<span id="more"></span>
-
-<ul>
-<li><p>  [] 不捕获任何变量。</p>
+    <h2 id="定时器介绍"><a href="#定时器介绍" class="headerlink" title="定时器介绍"></a>定时器介绍</h2><p>定时器（TIM，timer）可以对输入的时钟进行计数（stm32 中多为 72MHz），并在计数值达到设定值时触发中断。</p>
+<p>定时器分类：</p>
+<table>
+<thead>
+<tr>
+<th>定时器</th>
+<th>总线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高级控制定时器（TIM1 和 TIM8）</td>
+<td>APB 2</td>
+</tr>
+<tr>
+<td>通用定时器（TIM2、TIM3、TIM4 和 TIM5）</td>
+<td>APB 1</td>
+</tr>
+<tr>
+<td>基本定时器（TIM6 和 TIM7）</td>
+<td>APB 1</td>
+</tr>
+</tbody></table>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303041637852.png" alt="image-20230304163729706"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303041638692.png" alt="image-20230304163832626"></p>
+<ol>
+<li><p>高级定时器</p>
+<p> 高级控制定时器（TIM1 和 TIM8）由一个 16 位的自动装载计数器组成，它由一个可编程的预分频器驱动。</p>
+<p> 它适合多种用途，包含测量输入信号的脉冲宽度（输入捕获），或者产生输出波形（输出比较、PWM、嵌入死区时间的互补 PWM 等）。</p>
+<p> 使用定时器预分频器和RCC时钟控制预分频器，可以实现脉冲宽度和波形周期从几个微秒到几个毫秒的调节。</p>
+<p> 高级控制定时器（TIM1 和 TIM8）和通用定时器（TIMx）是完全独立的，它们不共享任何资源。</p>
+<p> TIM1和TIM8定时器的功能包括：</p>
+<p> ● 16 位向上、向下、向上/下自动装载计数器</p>
+<p> ● 16 位可编程（可以实时修改）预分频器，计数器时钟频率的分频系数为 1 ～ 65535 之间的任意数值</p>
+<p> ● 多达 4 个独立通道：</p>
+<p> ​    ─ 输入捕获</p>
+<p> ​    ─ 输出比较</p>
+<p> ​    ─ PWM 生成（边缘或中间对齐模式）</p>
+<p> ​    ─ 单脉冲模式输出</p>
+<p> ● 死区时间可编程的互补输出</p>
+<p> ● 使用外部信号控制定时器和定时器互联的同步电路</p>
+<p> ● 允许在指定数目的计数器周期之后更新定时器寄存器的重复计数器</p>
+<p> ● 刹车输入信号可以将定时器输出信号置于复位状态或者一个已知状态</p>
+<p> ● 如下事件发生时产生中断 / DMA：</p>
+<p> ​    ─ 更新：计数器向上溢出/向下溢出，计数器初始化（通过软件或者内部/外部触发） </p>
+<p> ​    ─ 触发事件（计数器启动、停止、初始化或者由内部/外部触发计数） </p>
+<p> ​    ─ 输入捕获</p>
+<p> ​    ─ 输出比较</p>
+<p> ​    ─ 刹车信号输入</p>
+<p> ● 支持针对定位的增量（正交）编码器和霍尔传感器电路</p>
+<p> ● 触发输入作为外部时钟或者按周期的电流管理</p>
 </li>
-<li><p>  [&amp;] 捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。</p>
+<li><p>通用计时器</p>
+<p> 通用定时器是一个通过可编程预分频器驱动的16位自动装载计数器构成。</p>
+<p> 它适用于多种场合，包括测量输入信号的脉冲长度（输入捕获）或者产生输出波形（输出比较和 PWM）。</p>
+<p> 使用定时器预分频器和 RCC 时钟控制器预分频器，脉冲长度和波形周期可以在几个微秒到几个毫秒间调整。</p>
+<p> 每个定时器都是完全独立的，没有互相共享任何资源。</p>
+<p> 通用 TIMx （TIM2、TIM3、TIM4和TIM5）定时器功能包括：</p>
+<p> ● 16 位向上、向下、向上/向下自动装载计数器</p>
+<p> ● 16 位可编程（可以实时修改）预分频器，计数器时钟频率的分频系数为 1 ～ 65536 之间的任意数值</p>
+<p> ● 4 个独立通道：</p>
+<p> ​    ─ 输入捕获</p>
+<p> ​    ─ 输出比较</p>
+<p> ​    ─ PWM 生成（边缘或中间对齐模式)）</p>
+<p> ​    ─ 单脉冲模式输出</p>
+<p> ● 使用外部信号控制定时器和定时器互连的同步电路</p>
+<p> ● 如下事件发生时产生中断 / DMA：</p>
+<p> ​    ─ 更新：计数器向上溢出/向下溢出，计数器初始化（通过软件或者内部/外部触发)）</p>
+<p> ​    ─ 触发事件（计数器启动、停止、初始化或者由内部/外部触发计数)）</p>
+<p> ​    ─ 输入捕获</p>
+<p> ​    ─ 输出比较</p>
+<p> ● 支持针对定位的增量（正交）编码器和霍尔传感器电路</p>
+<p> ● 触发输入作为外部时钟或者按周期的电流管理</p>
 </li>
-<li><p>[=] 捕获外部作用域中所有变量，并作为副本在函数体中使用（按值捕获）。</p>
-<p>  按值传递：若想修改，需要在 <strong>小括号</strong> 后面加上 **mutable ** （opt 的一种）</p>
-<p>  修改的是 copy 值，而不是 本体</p>
+<li><p>基本定时器</p>
+<p> 基本定时器 TIM6 和 TIM7 各包含一个 16 位自动装载计数器，由各自的可编程预分频器驱动。</p>
+<p> 它们可以作为通用定时器提供时间基准，特别地可以为数模转换器（DAC）提供时钟。实际上，它们在芯片内部直接连接到DAC并通过触发输出直接驱动 DAC。</p>
+<p> 这 2 个定时器是互相独立的，不共享任何资源。</p>
+<p> TIM6和TIM7定时器的主要功能包括：</p>
+<p> ● 16 位自动重装载累加计数器</p>
+<p> ● 16 位可编程（可实时修改）预分频器，用于对输入的时钟按系数为 1 ～ 65536 之间的任意数值分频</p>
+<p> ● 触发 DAC 的同步电路</p>
+<p> ● 在更新事件（计数器溢出）时产生中断 / DMA请求 </p>
 </li>
-<li><p>  [=，&amp;foo] 按值捕获外部作用域中所有变量，并按引用捕获 foo 变量。</p>
-</li>
-<li><p>  [bar] 按值捕获 bar 变量，同时不捕获其他变量。</p>
-</li>
-<li><p>  [this] 捕获当前类中的 this <a target="_blank" rel="noopener" href="http://c.biancheng.net/c/80/">指针</a>，让 lambda 表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 &amp; 或者 =，就默认添加此选项。捕获 this 的目的是可以在 lamda 中使用当前类的成员函数和成员变量。</p>
-</li>
-</ul>
-<blockquote>
-<p>  关于 foo、bar 的解释：</p>
-<p>  <img src="C:/Users/dengshitao/AppData/Roaming/Typora/typora-user-images/image-20230304085747410.png" alt="image-20230304085747410"></p>
-<p>  链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangluqinglxq/article/details/27711295">(43条消息) 变量foo 和 bar的由来_michael_wlq的博客-CSDN博客_foo和bar</a></p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> i_ = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> x1 = []&#123; <span class="keyword">return</span> i_; &#125;;                    <span class="comment">// error，没有捕获外部变量</span></span><br><span class="line">        <span class="keyword">auto</span> x2 = [=]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;           <span class="comment">// OK，捕获所有外部变量</span></span><br><span class="line">        <span class="keyword">auto</span> x3 = [&amp;]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;           <span class="comment">// OK，捕获所有外部变量</span></span><br><span class="line">        <span class="keyword">auto</span> x4 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_; &#125;;                <span class="comment">// OK，捕获this指针</span></span><br><span class="line">        <span class="keyword">auto</span> x5 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;        <span class="comment">// error，没有捕获x、y</span></span><br><span class="line">        <span class="keyword">auto</span> x6 = [<span class="keyword">this</span>, x, y]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;  <span class="comment">// OK，捕获this指针、x、y</span></span><br><span class="line">        <span class="keyword">auto</span> x7 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_++; &#125;;              <span class="comment">// OK，捕获this指针，并修改成员的值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">auto</span> f1 = []&#123; <span class="keyword">return</span> a; &#125;;               <span class="comment">// error，没有捕获外部变量</span></span><br><span class="line"><span class="keyword">auto</span> f2 = [&amp;]&#123; <span class="keyword">return</span> a++; &#125;;            <span class="comment">// OK，捕获所有外部变量，并对a执行自加运算</span></span><br><span class="line"><span class="keyword">auto</span> f3 = [=]&#123; <span class="keyword">return</span> a; &#125;;              <span class="comment">// OK，捕获所有外部变量，并返回a</span></span><br><span class="line"><span class="keyword">auto</span> f4 = [=]&#123; <span class="keyword">return</span> a++; &#125;;            <span class="comment">// error，a是以复制方式捕获的，无法修改</span></span><br><span class="line"><span class="keyword">auto</span> f5 = [a]&#123; <span class="keyword">return</span> a + b; &#125;;          <span class="comment">// error，没有捕获变量b</span></span><br><span class="line"><span class="keyword">auto</span> f6 = [a, &amp;b]&#123; <span class="keyword">return</span> a + (b++); &#125;;  <span class="comment">// OK，捕获a和b的引用，并对b做自加运算</span></span><br><span class="line"><span class="keyword">auto</span> f7 = [=, &amp;b]&#123; <span class="keyword">return</span> a + (b++); &#125;;  <span class="comment">// OK，捕获所有外部变量和b的引用，并对b做自加运算</span></span><br></pre></td></tr></table></figure>
-
+</ol>
 
     
 
@@ -248,7 +299,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://north-mi.github.io/2022/10/15/Lamda表达式/" title="Lamda表达式" target="_blank">https://north-mi.github.io/2022/10/15/Lamda表达式/</a>
+          <a href="https://north-mi.github.io/2023/03/04/TIM定时器/" title="TIM定时器（一）" target="_blank">https://north-mi.github.io/2023/03/04/TIM定时器/</a>
         </li>
         
         <li>
@@ -270,11 +321,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Lamda 表达式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">STM32</a>
         		</li>
       		
 		</ul>
@@ -341,7 +388,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2022/10/15/Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -356,18 +403,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/01/15/%E4%B8%AA%E4%BA%BA%E5%85%B3%E4%BA%8ERS-232%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E5%88%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/04/10/%E5%AE%9E%E4%B9%A0%E6%9C%9F%E9%97%B4%E5%85%B3%E4%BA%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          个人关于RS-232的一些理解以及查询到的相关资料
+          实习期间关于自动化的一些学习
         
       </div>
     </a>
   
   
-    <a href="/2022/10/04/QT%E7%9A%84%E6%A7%BD%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">QT的槽函数</div>
+    <a href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈单例模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
