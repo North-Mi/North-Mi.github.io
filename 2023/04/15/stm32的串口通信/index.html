@@ -6,17 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://north-mi.github.io">
-  <title>Archives: 2022/6 | NorthMi 的 Blog</title>
+  <title>stm32的串口通信 | NorthMi 的 Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="NorthMi 的 Blog">
-<meta property="og:url" content="https://north-mi.github.io/archives/2022/06/index.html">
+  <meta name="description" content="总所周知，通信协议是标准化通信的必需品，也是学习嵌入式的必经之路。在 stm32 中，能使用到的通信也十分之多，诸如 USART（串口）、IIC、SPI、CAN、USB等。现在来说一说其中的 USART 通信，也就是串口通信吧。 串口通信，是一种全双工的异步通信，是一种点对点的通信方式。串口通信主要需要使用三根线，分别为 RX（D），TX（D），GND，但我们习惯再加一根VCC（为子模块供电，若子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32的串口通信">
+<meta property="og:url" content="https://north-mi.github.io/2023/04/15/stm32%E7%9A%84%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
+<meta property="og:description" content="总所周知，通信协议是标准化通信的必需品，也是学习嵌入式的必经之路。在 stm32 中，能使用到的通信也十分之多，诸如 USART（串口）、IIC、SPI、CAN、USB等。现在来说一说其中的 USART 通信，也就是串口通信吧。 串口通信，是一种全双工的异步通信，是一种点对点的通信方式。串口通信主要需要使用三根线，分别为 RX（D），TX（D），GND，但我们习惯再加一根VCC（为子模块供电，若子">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304152128191.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304152255964.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161756239.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304162022299.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161805015.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161807753.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161827509.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161836115.png">
+<meta property="article:published_time" content="2023-04-15T12:50:34.000Z">
+<meta property="article:modified_time" content="2023-04-16T12:24:41.510Z">
 <meta property="article:author" content="NorthMi">
+<meta property="article:tag" content="单片机">
+<meta property="article:tag" content="stm32">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304152128191.png">
   
     <link rel="alternative" href="/atom.xml" title="NorthMi 的 Blog" type="application/atom+xml">
   
@@ -145,112 +160,290 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-stm32的串口通信" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2022-06-19T13:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/06/19/Git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" target="_blank">Git 的基本使用</a>
   
+    <h1 class="article-title" itemprop="name">
+      stm32的串口通信
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+<a href="/2023/04/15/stm32%E7%9A%84%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="archive-article-date">
+        <time datetime="2023-04-15T12:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-15</time>
+</a>
 
-          
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.4k字</span>
+    </span>
+  </span>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>总所周知，通信协议是标准化通信的必需品，也是学习嵌入式的必经之路。在 stm32 中，能使用到的通信也十分之多，诸如 USART（串口）、IIC、SPI、CAN、USB等。现在来说一说其中的 USART 通信，也就是串口通信吧。</p>
+<p>串口通信，是一种全双工的异步通信，是一种点对点的通信方式。串口通信主要需要使用三根线，分别为 RX（D），TX（D），GND，但我们习惯再加一根VCC（为子模块供电，若子模块没有独立供电则必须接，且注意子模块的电压要求）。</p>
+<blockquote>
+<p>  tips：</p>
+<p>  全双工：指两根线，分别进行发送和接收，如 USART 的 RX 和 TX 线。</p>
+<p>  半双工：发送和接收使用同一根线，如 IIC 中的 SDA 线。</p>
+  <span id="more"></span>
+
+<p>  同步：指可以直接发送，无需管时钟同步，这种一般需要一根单独的时钟线进行时钟同步，如 IIC 中的 SCL。</p>
+<p>  异步：需要双方约定一个时钟频率，才能进行通信，这种不需要单独的时钟线。</p>
+</blockquote>
+<p>其中，TX 为发送信号线，RX 为接收信号线。基本接线要求如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304152128191.png" alt="image-20230415212818022"></p>
+<blockquote>
+<p>  串口常用电平标准：</p>
+<p>  TTL：+3.3 v 或者 +5 v 表示 1，0 v 表示0；</p>
+<p>  RS232：-3 ~ -15 v 表示 1，+3 ~ +15 v 表示 0；</p>
+<p>  RS485：两线压差 +2 ~ +6 v 为 1，两线压差 -2 ~ -6 v 为 0</p>
+</blockquote>
+<p>关于串口通信的参数：</p>
+<p>波特率：每秒传输码元的个数（注意，跟比特率不同，比特率为每秒传输的比特数，只有在二进制位通信的时候这俩才能画等号）</p>
+<p>起始位：标志一个数据帧的开始，固定为低电平，注意，串口在空闲的时候，信号线置高电平</p>
+<p>数据位：数据帧的有效数据，<strong>低位先行</strong></p>
+<p>停止位：数据帧的间隔，固定为高电平（stm32 中可配置为 0.5 位，1 位，1.5 位，2位）</p>
+<p>校检位：用于数据验证，根据数据位计算而来，具体校检方式可以查看《通信原理》（不过也可选择不用，此时数据帧就少了一个位）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304152255964.png" alt="image-20230415225517921"></p>
+<p>标准库开发流程：</p>
+<ol>
+<li> 开启时钟</li>
+<li> GPIO 初始化</li>
+<li> 配置 USART</li>
+<li> （需要接收数据则需要配置中断）开启串口</li>
+</ol>
+<h2 id="Test-1-发送数据"><a href="#Test-1-发送数据" class="headerlink" title="Test 1. 发送数据"></a>Test 1. 发送数据</h2><p><em>主函数：</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span>                  <span class="comment">// Device header</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Delay.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;OLED.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Serial.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OLED_Init();</span><br><span class="line"></span><br><span class="line">	Serial_Init();</span><br><span class="line"></span><br><span class="line">	Serial_SendByte(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">	</span><br><span class="line">	Serial_SendString(<span class="string">&quot;\r\nHello World!\r\n&quot;</span>);</span><br><span class="line">	Serial_SendNum(<span class="number">12345</span>, <span class="number">5</span>);</span><br><span class="line">	Serial_SendString(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">	Serial_SendNum(<span class="number">-12345</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><em>Serial.c</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span>                  <span class="comment">// Device header</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//1. 时钟初始化</span></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//2. GPIO 初始化</span></span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStruncture;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Mode = GPIO_Mode_AF_PP;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Pin = GPIO_Pin_9;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStruncture);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//3. USART 初始化</span></span><br><span class="line">    USART_InitTypeDef USART_InitStructure;</span><br><span class="line">    USART_InitStructure.USART_BaudRate = <span class="number">9600</span>;</span><br><span class="line">    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;</span><br><span class="line">    USART_InitStructure.USART_Mode = USART_Mode_Tx;</span><br><span class="line">    USART_InitStructure.USART_Parity = USART_Parity_No;</span><br><span class="line">    USART_InitStructure.USART_StopBits = USART_StopBits_1;</span><br><span class="line">    USART_InitStructure.USART_WordLength = USART_WordLength_8b;</span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 使能USART</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_SendByte</span><span class="params">(<span class="keyword">uint8_t</span> Byte)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//发送数据，并检查标志位</span></span><br><span class="line">    USART_SendData(USART1, Byte);</span><br><span class="line">    <span class="keyword">while</span>(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_SendString</span><span class="params">(<span class="keyword">char</span>* String)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint16_t</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(String[i] != <span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Serial_SendByte(String[i]);</span><br><span class="line">        i ++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_SendNum</span><span class="params">(<span class="keyword">int</span> Num, <span class="keyword">uint16_t</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Num &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Serial_SendByte(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">        Num = -Num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> flg = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        flg *= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(flg != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Serial_SendByte(Num / flg % <span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">        flg /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161756239.png" alt="image-20230416175642034"></p>
+<h2 id="Test-2-串口发送-接收数据（中断接收）"><a href="#Test-2-串口发送-接收数据（中断接收）" class="headerlink" title="Test 2. 串口发送 + 接收数据（中断接收）"></a>Test 2. 串口发送 + 接收数据（中断接收）</h2><p><em>主函数：</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span>                  <span class="comment">// Device header</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Delay.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;OLED.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Serial.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint8_t</span> RxData;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	OLED_Init();</span><br><span class="line"></span><br><span class="line">	Serial_Init();</span><br><span class="line"></span><br><span class="line">    OLED_ShowString(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&quot;RxData:&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="keyword">if</span> (Serial_GetRxFlag() == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			RxData = Serial_GetData();</span><br><span class="line">			Serial_SendByte(RxData);</span><br><span class="line">			OLED_ShowHexNum(<span class="number">2</span>, <span class="number">1</span>, RxData, <span class="number">2</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>中断函数和接收串口函数的初始化：</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//1. 时钟初始化</span></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//2. GPIO 初始化</span></span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStruncture;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Mode = GPIO_Mode_AF_PP;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Pin = GPIO_Pin_9;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStruncture);</span><br><span class="line">    </span><br><span class="line">    GPIO_InitStruncture.GPIO_Mode = GPIO_Mode_IPU;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Pin = GPIO_Pin_10;</span><br><span class="line">    GPIO_InitStruncture.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStruncture);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//3. USART 初始化</span></span><br><span class="line">    USART_InitTypeDef USART_InitStructure;</span><br><span class="line">    USART_InitStructure.USART_BaudRate = <span class="number">9600</span>;</span><br><span class="line">    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;</span><br><span class="line">    USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;</span><br><span class="line">    USART_InitStructure.USART_Parity = USART_Parity_No;</span><br><span class="line">    USART_InitStructure.USART_StopBits = USART_StopBits_1;</span><br><span class="line">    USART_InitStructure.USART_WordLength = USART_WordLength_8b;</span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// a.开启中断</span></span><br><span class="line">    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// b. 配置 NVIC（串口接收）</span></span><br><span class="line">    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line">    </span><br><span class="line">    NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = <span class="number">1</span>;</span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">1</span>;</span><br><span class="line">    NVIC_Init(&amp;NVIC_InitStructure);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 使能USART</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 标志与数据</span></span><br><span class="line"><span class="keyword">uint8_t</span> Serial_RxData;</span><br><span class="line"><span class="keyword">uint8_t</span> Serial_RxFlag;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 标志与数据的处理</span></span><br><span class="line"><span class="function"><span class="keyword">uint8_t</span> <span class="title">Serial_GetRxFlag</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Serial_RxFlag == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Serial_RxFlag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">uint8_t</span> <span class="title">Serial_GetData</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Serial_RxData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中断函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取中断标志位，确定进入中断</span></span><br><span class="line">    <span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) == SET)</span><br><span class="line">    &#123;</span><br><span class="line">        Serial_RxData = USART_ReceiveData(USART1);</span><br><span class="line">        Serial_RxFlag = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 清除中断标志位</span></span><br><span class="line">        USART_ClearITPendingBit(USART1, USART_IT_RXNE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>测试结果：</em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304162022299.png" alt="image-20230416202257043"></p>
+<p>总的来说，这里简单说了下串口通信的基本方法和原理，但是还有一些像数据包的发送与接收并没有涉及，这些部分日后再说）</p>
+<blockquote>
+<p>  将 <em>printf（）</em> 重定向到串口：</p>
+<p>  方法一：</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161805015.png" alt="image-20230416180524957"></p>
+<p>  首先把这个 Use MicroLIB 打开</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161807753.png" alt="image-20230416180705568"></p>
+<p>  然后在头文件申明 <em>stdio.h</em> 的头文件</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> ch, FILE* f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Serial_SendByte(ch);</span><br><span class="line">    <span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  然后再对 <em>printf（）</em> 的底层函数 <em>fputc（）</em> 进行重写</p>
+<p>  注：此方法会让 <em>printf()</em> 只能被一个串口使用，也就是如果在串口一使用了的话，串口二就无法使用了</p>
+<hr>
+<p>  方法二：</p>
+<p>  使用 <em>sprintf（）</em> 函数；</p>
+<p>  使用方法如下：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> String[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(String, <span class="string">&quot;Num = %d&quot;</span>, <span class="number">12345</span>);</span><br><span class="line">Serial_SendString(String);</span><br></pre></td></tr></table></figure>
+
+<p>  结果如下：</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161827509.png" alt="image-20230416182704459"></p>
+<p>  另外，还可以对该函数进行封装：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdarg.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Serial_Printf</span><span class="params">(<span class="keyword">char</span>* format, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> String[<span class="number">100</span>];</span><br><span class="line">    va_list arg;</span><br><span class="line">    va_start(arg, format);</span><br><span class="line">    <span class="built_in">vsprintf</span>(String, format, arg);</span><br><span class="line">    va_end(arg);</span><br><span class="line">    Serial_SendString(String);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  test:</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial_Printf(<span class="string">&quot;Num = %d\r\n&quot;</span>, <span class="number">666</span>);</span><br></pre></td></tr></table></figure>
+
+<p>  结果：</p>
+<p>  ​    <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304161836115.png" alt="image-20230416183655034"></p>
+</blockquote>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          NorthMi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://north-mi.github.io/2023/04/15/stm32的串口通信/" title="stm32的串口通信" target="_blank">https://north-mi.github.io/2023/04/15/stm32的串口通信/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-        <time datetime="2022-06-04T12:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank">浅谈C++的面向对象</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单片机</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stm32</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://north-mi.github.io/2023/04/15/stm32%E7%9A%84%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/15/%E7%BD%AE%E9%A1%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">置顶</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -279,8 +472,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
