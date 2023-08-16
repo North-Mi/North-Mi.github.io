@@ -152,6 +152,341 @@
             
 
   
+    <article id="post-TIM定时器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/" target="_blank">TIM定时器（一）</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/" class="archive-article-date">
+        <time datetime="2023-03-04T07:42:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="定时器介绍"><a href="#定时器介绍" class="headerlink" title="定时器介绍"></a>定时器介绍</h2><p>定时器（TIM，timer）可以对输入的时钟进行计数（stm32 中多为 72MHz），并在计数值达到设定值时触发中断。</p>
+<p>定时器分类：</p>
+<table>
+<thead>
+<tr>
+<th>定时器</th>
+<th>总线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高级控制定时器（TIM1 和 TIM8）</td>
+<td>APB 2</td>
+</tr>
+<tr>
+<td>通用定时器（TIM2、TIM3、TIM4 和 TIM5）</td>
+<td>APB 1</td>
+</tr>
+<tr>
+<td>基本定时器（TIM6 和 TIM7）</td>
+<td>APB 1</td>
+</tr>
+</tbody></table>
+    
+    <a class="article-more-a" href="/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">STM32</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/04/TIM%E5%AE%9A%E6%97%B6%E5%99%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-浅谈单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" target="_blank">浅谈单例模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-02-27T19:48:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="关于单例模式"><a href="#关于单例模式" class="headerlink" title="关于单例模式"></a>关于单例模式</h1><p>单例模式是一种设计模式，其中只有一个实例（instance）存在。</p>
+<p>单例模式在C++中的实现方式是，通过使用一个静态成员变量来确保只有一个实例存在，并且可以在程序的任何地方访问它。</p>
+<p>通常可以使用一个私有的构造函数和一个静态的工厂函数来实现单例模式。</p>
+<p>此外，可以使用模板和智能指针来实现更加灵活的单例模式。不过此处不过多赘述。</p>
+    
+    <a class="article-more-a" href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/02/28/%E6%B5%85%E8%B0%88%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于STM32的外部中断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/02/03/%E5%85%B3%E4%BA%8ESTM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" target="_blank">关于STM32的外部中断</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/02/03/%E5%85%B3%E4%BA%8ESTM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" class="archive-article-date">
+        <time datetime="2023-02-03T15:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="关于-STM32-的外部中断介绍"><a href="#关于-STM32-的外部中断介绍" class="headerlink" title="关于 STM32 的外部中断介绍"></a>关于 STM32 的外部中断介绍</h2><p>首先，关于中断事件：</p>
+<blockquote>
+<p>  中断是指计算机运行过程中，出现某些意外情况需主机干预时，机器能自动停止正在运行的程序并转入处理新情况的程序，处理完毕后又返回原被暂停的程序继续运行。</p>
+<p>  ——来源<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%AD%E6%96%AD/3933007">中断（计算机术语）_百度百科 (baidu.com)</a></p>
+</blockquote>
+<p>外部中断是单片机中断的一种，外部中断有两种工作模式，一种是事件模式，还有一种则是中断模式。</p>
+<p>其中，事件模式是在程序中唤起中断程序；而中断模式则是靠监听引脚的电平来进入中断程序。</p>
+    
+    <a class="article-more-a" href="/2023/02/03/%E5%85%B3%E4%BA%8ESTM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">STM32</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单片机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/02/03/%E5%85%B3%E4%BA%8ESTM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-个人关于RS-232的一些理解以及查询到的相关资料" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -509,7 +844,7 @@
     <h1 id="关于-C-类型转换"><a href="#关于-C-类型转换" class="headerlink" title="关于 C++ 类型转换"></a>关于 C++ 类型转换</h1><p>C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。</p>
 <ol>
 <li><p>强制类型转换</p>
-<p> C++ 在 C 的基础上增加了一种形式：</p>
+<p>C++ 在 C 的基础上增加了一种形式：</p>
     
     <a class="article-more-a" href="/2022/08/26/c-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/#more">more >></a>
     
@@ -698,14 +1033,14 @@
 <p>内容：</p>
 <ol>
 <li><p>创建类以及声明对象和对象的成员函数</p>
-<p>  类：</p>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="keyword">double</span> n;</span><br><span class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">getN</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="keyword">double</span> n;</span><br><span class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">getN</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>  在以上代码中，创建了一个名为 <em>Example</em> 的类，有一个成员变量 <em>n</em> 和一个成员函数 <em>getN</em> （也叫作方法）；</p>
-<p>  声明对象及其方法函数调用：</p>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Example test;</span><br><span class="line">test.n = <span class="number">10</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;该对象的成员为：&quot;</span> &lt;&lt; test.<span class="built_in">getN</span>(); &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>在以上代码中，创建了一个名为 <em>Example</em> 的类，有一个成员变量 <em>n</em> 和一个成员函数 <em>getN</em> （也叫作方法）；</p>
+<p>声明对象及其方法函数调用：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Example test;</span><br><span class="line">test.n = <span class="number">10</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;该对象的成员为：&quot;</span> &lt;&lt; test.<span class="built_in">getN</span>(); &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
 
-<p>  上述代码中创建了一个名为 <em>test</em> 的 <em>Example</em> 对象，设置其成员变量 <em>n</em> 为 <em>10</em> ，并调用了 <em>getN()</em> 方法；</p>
+<p>上述代码中创建了一个名为 <em>test</em> 的 <em>Example</em> 对象，设置其成员变量 <em>n</em> 为 <em>10</em> ，并调用了 <em>getN()</em> 方法；</p>
     
     <a class="article-more-a" href="/2022/06/04/%E6%B5%85%E8%B0%88C-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/#more">more >></a>
     
@@ -873,298 +1208,6 @@
 
 
   
-    <article id="post-利用C语言在Linux下的文件操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" target="_blank">利用C语言在Linux下的文件操作</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-        <time datetime="2022-03-01T15:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="标题：利用-C-语言在-Linux-下的文件操作（打开、读写、关闭）"><a href="#标题：利用-C-语言在-Linux-下的文件操作（打开、读写、关闭）" class="headerlink" title="标题：利用 C 语言在 Linux 下的文件操作（打开、读写、关闭）"></a>标题：利用 C 语言在 Linux 下的文件操作（打开、读写、关闭）</h1><hr>
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>Linux系统下，万物皆为文件，所以对文件的操作是很重要的。</p>
-<p>在使用 C 语言对 Linux 系统下的文件进行读写时，基本步骤如下：</p>
-<ol>
-<li><p>打开文件</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	*	@pathname：字符串，带有路径的文件名</span></span><br><span class="line"><span class="comment">	*	@flags：整型变量，有宏定义如下</span></span><br><span class="line"><span class="comment">	*			O_RDONLY	只读打开</span></span><br><span class="line"><span class="comment">	*			O_WRONLY	只写打开</span></span><br><span class="line"><span class="comment">	*			O_RDWR		可读可写</span></span><br><span class="line"><span class="comment">	*			O_TURNC		截断，打开文件，并清空文件内容</span></span><br><span class="line"><span class="comment">	*			O_CREAT		创建，如果文件不存在则创建再打开，存在则直接打开</span></span><br><span class="line"><span class="comment">	*	返回值：</span></span><br><span class="line"><span class="comment">	*		-1：打开文件失败</span></span><br><span class="line"><span class="comment">	*		一个 &gt;= 3 的正整数：打开文件成功，返回文件标识符</span></span><br><span class="line"><span class="comment">	*</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于stm32项目文件结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_blank">关于stm32项目文件结构————新建文件夹</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" class="archive-article-date">
-        <time datetime="2022-02-25T13:20:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="标题：关于-stm32-的文件结构——新建文件夹"><a href="#标题：关于-stm32-的文件结构——新建文件夹" class="headerlink" title="标题：关于 stm32 的文件结构——新建文件夹"></a>标题：关于 stm32 的文件结构——新建文件夹</h2><hr>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>这周开的实训，是用 stm32 进行的，这给本来就想学习 stm32 开发的我一个入门的机会。</p>
-<p>之前有看过一些 stm32 开发的教学视频，虽然据说之后新开项目的时候直接用模板复制一份就行，但个人觉得第一次建立项目结构、模板的时候有必要好好理解一下，不然只能照本宣科，也对导库什么的难以理解。</p>
-<p>就 stm32 而言，其新建工程一般需要导入一些固件库来配置芯片，才能方便我们开发。</p>
-<p> 我们需要导入的文件中都需要从固件库中寻找，大致含有一下几种文件：</p>
-    
-    <a class="article-more-a" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stm32</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单片机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" target="_blank">我的第一篇博客</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2022-01-23T05:29:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-23</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><hr>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1234,6 +1277,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -1278,6 +1329,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -1286,15 +1341,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,11 +1357,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1319,6 +1366,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1334,15 +1389,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

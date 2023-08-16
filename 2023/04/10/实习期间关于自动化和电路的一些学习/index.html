@@ -208,67 +208,67 @@
 <p>PLC，Programmable Logic Controller，即可编程逻辑控制器。PLC 本质上也是类似于一台计算机，PLC 的机器核心即为 CPU，外围则有输入，输出，存储的话有寄存器，有 SD 卡用于存储程序等。</p>
 <p>西门子 S7-1200 基本模块</p>
 <ol>
-<li> CPU模块</li>
-<li> 电源模块</li>
-<li>I/O 模块<ol>
-<li> 输入</li>
-<li> 输出</li>
+<li>CPU模块</li>
+<li>电源模块</li>
+<li>I&#x2F;O 模块<ol>
+<li>输入</li>
+<li>输出</li>
 </ol>
 </li>
-<li> 内存模块</li>
+<li>内存模块</li>
 </ol>
 <p>西门子 S7-1200 常见扩展模块</p>
 <ol>
 <li><p>信号板</p>
-<p> 扩展西门子S7-1200 PLC的输入和输出点数</p>
+<p>扩展西门子S7-1200 PLC的输入和输出点数</p>
 </li>
 <li><p>信号模块</p>
-<p> 为西门子S7-1200 PLC所特有的，可以给CPU模块增加I/O。每一个CPU模块都可以添加一个具有数字量或模拟量I/O的SB。</p>
+<p>为西门子S7-1200 PLC所特有的，可以给CPU模块增加I&#x2F;O。每一个CPU模块都可以添加一个具有数字量或模拟量I&#x2F;O的SB。</p>
 </li>
 <li><p>通信模块</p>
-<p> 为CPU 提供附加的通信端口（RS232或RS485），连接在CPU的左侧。</p>
+<p>为CPU 提供附加的通信端口（RS232或RS485），连接在CPU的左侧。</p>
 </li>
 </ol>
 <p>而对于西门子 PLC 的数据类型与程序结构：</p>
 <p>物理存储器：</p>
 <ul>
-<li>  ROM</li>
-<li>  RAM</li>
-<li>  Flash EPROM</li>
+<li>ROM</li>
+<li>RAM</li>
+<li>Flash EPROM</li>
 </ul>
 <p>数据类型：</p>
 <ul>
-<li>  布尔型数据</li>
-<li>  整型</li>
-<li>  实型</li>
-<li>  时间型</li>
-<li>  字符型</li>
+<li>布尔型数据</li>
+<li>整型</li>
+<li>实型</li>
+<li>时间型</li>
+<li>字符型</li>
 </ul>
 <p>代码块的种类：</p>
 <ul>
-<li>  组织块（OB）——用于定义程序结构</li>
-<li>  功能块（FB）——包含与特定任务或参数组合相对应的代码</li>
-<li>  数据块（DB）——用于存储程序块可使用的数据</li>
+<li>组织块（OB）——用于定义程序结构</li>
+<li>功能块（FB）——包含与特定任务或参数组合相对应的代码</li>
+<li>数据块（DB）——用于存储程序块可使用的数据</li>
 </ul>
 <p>用户程序的结构：</p>
 <ul>
-<li>  线性结构</li>
-<li>  模块化结构</li>
+<li>线性结构</li>
+<li>模块化结构</li>
 </ul>
 <blockquote>
 <p>  这里说一下，线性结构类似于计算机编程中一路写到底，而不对任何成模块化的功能进行函数的封装，而模块化结构就是将功能性的、能模块化的电路进行封装，方便后续的再使用。</p>
 </blockquote>
 <p>CPU 的三种工作模式：</p>
 <ol>
-<li> STOP 模式——CPU 不执行任何程序，用户可以下载项目</li>
-<li> STARTUP 模式——执行一次 OB </li>
-<li> RUN 模式</li>
+<li>STOP 模式——CPU 不执行任何程序，用户可以下载项目</li>
+<li>STARTUP 模式——执行一次 OB </li>
+<li>RUN 模式</li>
 </ol>
-<p>关于西门子 s7-1200 的硬件接线可分为 3 种：（电源供电 / 输入信号 / 输出信号）</p>
+<p>关于西门子 s7-1200 的硬件接线可分为 3 种：（电源供电 &#x2F; 输入信号 &#x2F; 输出信号）</p>
 <ol>
-<li> AC/DCRLY</li>
-<li> DC/DC/DC</li>
-<li> DC/DC/RLY</li>
+<li>AC&#x2F;DCRLY</li>
+<li>DC&#x2F;DC&#x2F;DC</li>
+<li>DC&#x2F;DC&#x2F;RLY</li>
 </ol>
 <p>其中，AC 指 220 v 交流电，DC 指 24 v 直流电。</p>
 <p>而对于输出信号，RLY 指的是<strong>继电器输出类型</strong>，DC指的是<strong>晶体管输出类型</strong>，对于继电器，反应慢，寿命低，但是可带动的范围大，24 - 220 v 均可使用，泛用性高，晶体管输出则反之，但是泛用性不如继电器。</p>
@@ -297,7 +297,7 @@
 <p>同样是将功能进行封装和调用，不过单片机多数是使用 C ，而 PLC 则是通过电路对功能电路进行封装，而其中的中间寄存器 R 就相当于函数中的变量了。</p>
 <p> 师傅的代码中，将 DT0 看做状态位，以设置其不同的动作。</p>
 <p>周末期间还看了一些别的，后续更新。</p>
-<p>（各方面原因，该文只采用语言描述，以日记形式编写，可能描述比较抽象，，，┐(‘～`；)┌ 就这样吧，开摆）</p>
+<p>（各方面原因，该文只采用语言描述，以日记形式编写，可能描述比较抽象，，，┐(‘～&#96;；)┌ 就这样吧，开摆）</p>
 
     
 
@@ -529,6 +529,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -573,6 +581,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -581,15 +593,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,11 +609,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,6 +618,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,15 +641,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

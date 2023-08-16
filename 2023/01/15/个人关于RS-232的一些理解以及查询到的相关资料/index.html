@@ -226,10 +226,10 @@
 </blockquote>
 <p>而在上图中，其要经过 MAX232 来进行电平调解，则是因为 RS-232 的电气特性与单片机常使用 TTL 电平不同，其规则为：</p>
 <p>在TXD和RXD引脚上电平定义：</p>
-<p>逻辑1=-3V~-15V；</p>
+<p>逻辑1&#x3D;-3V~-15V；</p>
 <p>在RTS、CTS、DSR、DTR和CD等控制线上电平定义：</p>
-<p>信号有效=+3V~+15V；</p>
-<p>信号无效=-3V~-15V；</p>
+<p>信号有效&#x3D;+3V~+15V；</p>
+<p>信号无效&#x3D;-3V~-15V；</p>
 <p>以上规定说明了RS-232C标准对应逻辑电平的定义。注意：对于介于-3V ~ +3V之间的电压处于模糊区电位，此部分电压将使得计算机无法正确判断输出信号的意义，可能得到0，也可能得到1，如此得到的结果是不可信的，在通讯时候的体系是会出现大量误码，造成通讯失败。因此，实际工作时，应保证传输的电平在+3 ~ +15V 或-3V ~ -15V 之间。</p>
 <p>但是，一般来说个人电脑上还装有 RS-232 接口的已经很少了，一般来说，使用的时候都会通过 USB 转 RS-232 接口的电路来实现计算机与单片机的串口通信，用于通信、程序烧录等方面。关于 USB 与 RS-232 接口的转换电路的话，网上也有很多，甚至淘宝客服的资料里也有一堆原理图，这里也不啰嗦了。</p>
 <p>关于 MAX232 ：</p>
@@ -240,7 +240,7 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><em>《常用驱动电路设计及应用》</em></p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232/2022036#reference-[2]-112004-wrap">RS-232_百度百科 (baidu.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RS-232C/8156015">RS-232C_百度百科 (baidu.com)</a></p>
-<p>[Maxim IC MAX232多通道RS-232驱动器/接收器 - Maxim | Mouser](<a target="_blank" rel="noopener" href="https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&amp;utm_medium=cpc&amp;utm_campaign=Maxim">https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&amp;utm_medium=cpc&amp;utm_campaign=Maxim</a> Supplier&amp;utm_term=Phrase max 232)</p>
+<p>[Maxim IC MAX232多通道RS-232驱动器&#x2F;接收器 - Maxim | Mouser](<a target="_blank" rel="noopener" href="https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&utm_medium=cpc&utm_campaign=Maxim">https://www.mouser.cn/new/maxim-integrated/maximmax232/?utm_source=baidu&amp;utm_medium=cpc&amp;utm_campaign=Maxim</a> Supplier&amp;utm_term&#x3D;Phrase max 232)</p>
 
     
 
@@ -472,6 +472,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -516,6 +524,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -524,15 +536,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +552,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,6 +561,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,15 +584,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

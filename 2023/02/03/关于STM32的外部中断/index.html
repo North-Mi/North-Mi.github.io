@@ -219,7 +219,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040029289.png" alt="image-20230304002906208"></p>
 <p>此处我只说明中断模式，关于事件模式日后有时间再补全。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040030420.png" alt="image-20230304003020341"></p>
-<p>由上图可知，每个引脚标号只能设置一个为 EXTI 引脚，例如，PA0 和 PB0 不能同时配置，因为此时他们都是配置到 EXTI0 上的，再通过 EXTI0 连接到 NVIC。 同时，通过 AFIO_EXTICRx 配置 GPIO 线上的外部中断/事件，必须先使能 AFIO 时钟。</p>
+<p>由上图可知，每个引脚标号只能设置一个为 EXTI 引脚，例如，PA0 和 PB0 不能同时配置，因为此时他们都是配置到 EXTI0 上的，再通过 EXTI0 连接到 NVIC。 同时，通过 AFIO_EXTICRx 配置 GPIO 线上的外部中断&#x2F;事件，必须先使能 AFIO 时钟。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040035068.png" alt="image-20230304003531983"></p>
 <p>另外，由说明书可知道的是：除了 GPIO 有连接到 EXTI 上，还有 PVD、RTC、USB、以太网唤醒事件也是连接到 EXTI 上的。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040047203.png" alt="image-20230304004703162"></p>
@@ -233,33 +233,33 @@
 <p>关于这 4 位寄存器如何分配给两种中断优先级，则看程序设计时对中断的分组了。</p>
 <h2 id="外部中断使用步骤"><a href="#外部中断使用步骤" class="headerlink" title="外部中断使用步骤"></a>外部中断使用步骤</h2><ol>
 <li><p>RCC时钟开启</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040010903.png" alt="image-20230304001018760"></p>
-<p> 由 stm32f10x 系列的说明文档可以看出，GPIO（通用输入输出口），EXTI（外部中断），AFIO（输入输出口复用）均挂载在 APB2 总线上，所以需要使用上述的外设必须先使能 APB2 的时钟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040010903.png" alt="image-20230304001018760"></p>
+<p>由 stm32f10x 系列的说明文档可以看出，GPIO（通用输入输出口），EXTI（外部中断），AFIO（输入输出口复用）均挂载在 APB2 总线上，所以需要使用上述的外设必须先使能 APB2 的时钟。</p>
 </li>
 <li><p>GPIO 配置与开启</p>
-<p> 使用引脚必须配置引脚，这个就不多说了。</p>
-<p> 关于 GPIO 配置的方法可查看我之前的博文：</p>
+<p>使用引脚必须配置引脚，这个就不多说了。</p>
+<p>关于 GPIO 配置的方法可查看我之前的博文：</p>
 </li>
 <li><p>AFIO 配置与开启</p>
-<p> 使用引脚的外部中断检测功能，实际上也是一种引脚复用，所以引脚复用的寄存器也是需要开启的。</p>
-<p> AFIO 的配置与 GPIO 类似。</p>
-<p> 值得一提的是，在库函数中，AFIO 的配置函数其函数名仍旧是以 GPIO 作为前缀的，所以要小心别搞错了。</p>
+<p>使用引脚的外部中断检测功能，实际上也是一种引脚复用，所以引脚复用的寄存器也是需要开启的。</p>
+<p>AFIO 的配置与 GPIO 类似。</p>
+<p>值得一提的是，在库函数中，AFIO 的配置函数其函数名仍旧是以 GPIO 作为前缀的，所以要小心别搞错了。</p>
 </li>
 <li><p>EXTI 配置与开启</p>
-<p> EXTI 的配置与 GPIO 配置类似，在库函数开发的情况下，依旧是将结构体传到相关初始化函数中进行配置。</p>
-<p> 库函数开发时，指定 EXTI 线路，触发模式，中断模式并使能就好了。其结构体和参数如下：</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint32_t</span> EXTI_Line;               <span class="comment">/*!&lt; Specifies the EXTI lines to be enabled or disabled.</span></span><br><span class="line"><span class="comment">                                         This parameter can be any combination of @ref EXTI_Lines */</span></span><br><span class="line">   </span><br><span class="line">  EXTIMode_TypeDef EXTI_Mode;       <span class="comment">/*!&lt; Specifies the mode for the EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be a value of @ref EXTIMode_TypeDef */</span></span><br><span class="line"></span><br><span class="line">  EXTITrigger_TypeDef EXTI_Trigger; <span class="comment">/*!&lt; Specifies the trigger signal active edge for the EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be a value of @ref EXTIMode_TypeDef */</span></span><br><span class="line"></span><br><span class="line">  FunctionalState EXTI_LineCmd;     <span class="comment">/*!&lt; Specifies the new state of the selected EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be set either to ENABLE or DISABLE */</span> </span><br><span class="line">&#125;EXTI_InitTypeDef;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  EXTI_Trigger_Rising = <span class="number">0x08</span>,</span><br><span class="line">  EXTI_Trigger_Falling = <span class="number">0x0C</span>,  </span><br><span class="line">  EXTI_Trigger_Rising_Falling = <span class="number">0x10</span></span><br><span class="line">&#125;EXTITrigger_TypeDef;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  EXTI_Mode_Interrupt = <span class="number">0x00</span>,</span><br><span class="line">  EXTI_Mode_Event = <span class="number">0x04</span></span><br><span class="line">&#125;EXTIMode_TypeDef;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>EXTI 的配置与 GPIO 配置类似，在库函数开发的情况下，依旧是将结构体传到相关初始化函数中进行配置。</p>
+<p>库函数开发时，指定 EXTI 线路，触发模式，中断模式并使能就好了。其结构体和参数如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint32_t</span> EXTI_Line;               <span class="comment">/*!&lt; Specifies the EXTI lines to be enabled or disabled.</span></span><br><span class="line"><span class="comment">                                         This parameter can be any combination of @ref EXTI_Lines */</span></span><br><span class="line">   </span><br><span class="line">  EXTIMode_TypeDef EXTI_Mode;       <span class="comment">/*!&lt; Specifies the mode for the EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be a value of @ref EXTIMode_TypeDef */</span></span><br><span class="line"></span><br><span class="line">  EXTITrigger_TypeDef EXTI_Trigger; <span class="comment">/*!&lt; Specifies the trigger signal active edge for the EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be a value of @ref EXTIMode_TypeDef */</span></span><br><span class="line"></span><br><span class="line">  FunctionalState EXTI_LineCmd;     <span class="comment">/*!&lt; Specifies the new state of the selected EXTI lines.</span></span><br><span class="line"><span class="comment">                                         This parameter can be set either to ENABLE or DISABLE */</span> </span><br><span class="line">&#125;EXTI_InitTypeDef;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  EXTI_Trigger_Rising = <span class="number">0x08</span>,</span><br><span class="line">  EXTI_Trigger_Falling = <span class="number">0x0C</span>,  </span><br><span class="line">  EXTI_Trigger_Rising_Falling = <span class="number">0x10</span></span><br><span class="line">&#125;EXTITrigger_TypeDef;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  EXTI_Mode_Interrupt = <span class="number">0x00</span>,</span><br><span class="line">  EXTI_Mode_Event = <span class="number">0x04</span></span><br><span class="line">&#125;EXTIMode_TypeDef;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p> <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040114192.png" alt="image-20230304011444117"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202303040114192.png" alt="image-20230304011444117"></p>
 </li>
 <li><p>NVIC 配置与开启</p>
-<p> NVIC 配置依旧与 GPIO 配置类似，还是将结构体的值传进初始化函数中（汗，感觉库函数开发绝大多数都是这样的）</p>
-<p> 不一样的是，EXTI 的初始化要注意有个分组，分组会一定程度上影响优先级的设置，具体参考如之前所述。</p>
-<p> 库函数开发中， NVIC 配置的结构体如下：</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannel;                    <span class="comment">/*!&lt; Specifies the IRQ channel to be enabled or disabled.</span></span><br><span class="line"><span class="comment">                                                   This parameter can be a value of @ref IRQn_Type </span></span><br><span class="line"><span class="comment">                                                   (For the complete STM32 Devices IRQ Channels list, please</span></span><br><span class="line"><span class="comment">                                                    refer to stm32f10x.h file) */</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelPreemptionPriority;  <span class="comment">/*!&lt; Specifies the pre-emption priority for the IRQ channel</span></span><br><span class="line"><span class="comment">                                                   specified in NVIC_IRQChannel. This parameter can be a value</span></span><br><span class="line"><span class="comment">                                                   between 0 and 15 as described in the table @ref NVIC_Priority_Table */</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelSubPriority;         <span class="comment">/*!&lt; Specifies the subpriority level for the IRQ channel specified</span></span><br><span class="line"><span class="comment">                                                   in NVIC_IRQChannel. This parameter can be a value</span></span><br><span class="line"><span class="comment">                                                   between 0 and 15 as described in the table @ref NVIC_Priority_Table */</span></span><br><span class="line"></span><br><span class="line">  FunctionalState NVIC_IRQChannelCmd;         <span class="comment">/*!&lt; Specifies whether the IRQ channel defined in NVIC_IRQChannel</span></span><br><span class="line"><span class="comment">                                                   will be enabled or disabled. </span></span><br><span class="line"><span class="comment">                                                   This parameter can be set either to ENABLE or DISABLE */</span>   </span><br><span class="line">&#125; NVIC_InitTypeDef;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>NVIC 配置依旧与 GPIO 配置类似，还是将结构体的值传进初始化函数中（汗，感觉库函数开发绝大多数都是这样的）</p>
+<p>不一样的是，EXTI 的初始化要注意有个分组，分组会一定程度上影响优先级的设置，具体参考如之前所述。</p>
+<p>库函数开发中， NVIC 配置的结构体如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannel;                    <span class="comment">/*!&lt; Specifies the IRQ channel to be enabled or disabled.</span></span><br><span class="line"><span class="comment">                                                   This parameter can be a value of @ref IRQn_Type </span></span><br><span class="line"><span class="comment">                                                   (For the complete STM32 Devices IRQ Channels list, please</span></span><br><span class="line"><span class="comment">                                                    refer to stm32f10x.h file) */</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelPreemptionPriority;  <span class="comment">/*!&lt; Specifies the pre-emption priority for the IRQ channel</span></span><br><span class="line"><span class="comment">                                                   specified in NVIC_IRQChannel. This parameter can be a value</span></span><br><span class="line"><span class="comment">                                                   between 0 and 15 as described in the table @ref NVIC_Priority_Table */</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelSubPriority;         <span class="comment">/*!&lt; Specifies the subpriority level for the IRQ channel specified</span></span><br><span class="line"><span class="comment">                                                   in NVIC_IRQChannel. This parameter can be a value</span></span><br><span class="line"><span class="comment">                                                   between 0 and 15 as described in the table @ref NVIC_Priority_Table */</span></span><br><span class="line"></span><br><span class="line">  FunctionalState NVIC_IRQChannelCmd;         <span class="comment">/*!&lt; Specifies whether the IRQ channel defined in NVIC_IRQChannel</span></span><br><span class="line"><span class="comment">                                                   will be enabled or disabled. </span></span><br><span class="line"><span class="comment">                                                   This parameter can be set either to ENABLE or DISABLE */</span>   </span><br><span class="line">&#125; NVIC_InitTypeDef;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p> 关于分组与中断优先级寄存器分配，还有中断优先级的设置范围如下：</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">@code  </span></span><br><span class="line"><span class="comment"> The table below gives the allowed values of the pre-emption priority and subpriority according</span></span><br><span class="line"><span class="comment"> to the Priority Grouping configuration performed by NVIC_PriorityGroupConfig function</span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">    NVIC_PriorityGroup   | NVIC_IRQChannelPreemptionPriority | NVIC_IRQChannelSubPriority  | Description</span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_0  |                0                  |            0-15             |   0 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   4 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_1  |                0-1                |            0-7              |   1 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   3 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_2  |                0-3                |            0-3              |   2 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   2 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_3  |                0-7                |            0-1              |   3 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   1 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_4  |                0-15               |            0                |   4 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   0 bits for subpriority                       </span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">@endcode</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>关于分组与中断优先级寄存器分配，还有中断优先级的设置范围如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">@code  </span></span><br><span class="line"><span class="comment"> The table below gives the allowed values of the pre-emption priority and subpriority according</span></span><br><span class="line"><span class="comment"> to the Priority Grouping configuration performed by NVIC_PriorityGroupConfig function</span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">    NVIC_PriorityGroup   | NVIC_IRQChannelPreemptionPriority | NVIC_IRQChannelSubPriority  | Description</span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_0  |                0                  |            0-15             |   0 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   4 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_1  |                0-1                |            0-7              |   1 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   3 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_2  |                0-3                |            0-3              |   2 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   2 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_3  |                0-7                |            0-1              |   3 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   1 bits for subpriority</span></span><br><span class="line"><span class="comment">  ----------------------------------------------------------------------------------------------------------------------------    </span></span><br><span class="line"><span class="comment">   NVIC_PriorityGroup_4  |                0-15               |            0                |   4 bits for pre-emption priority</span></span><br><span class="line"><span class="comment">                         |                                   |                             |   0 bits for subpriority                       </span></span><br><span class="line"><span class="comment">  ============================================================================================================================</span></span><br><span class="line"><span class="comment">@endcode</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>  注：这部分代码均来自 ST 公司提供的库函数中的代码片段</p>
@@ -512,6 +512,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -556,6 +564,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -564,15 +576,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +592,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +601,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,15 +624,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

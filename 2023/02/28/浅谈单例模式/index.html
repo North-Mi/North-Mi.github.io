@@ -209,9 +209,9 @@
 <span id="more"></span>
 
 <h1 id="单例模式实现步骤（-c-）"><a href="#单例模式实现步骤（-c-）" class="headerlink" title="单例模式实现步骤（ c++ ）"></a>单例模式实现步骤（ c++ ）</h1><ol>
-<li> 将类的构造方法定义为私有方法；</li>
-<li> 定义一个私有的类的静态实例；</li>
-<li> 提供一个公有的获取静态实例的静态方法；</li>
+<li>将类的构造方法定义为私有方法；</li>
+<li>定义一个私有的类的静态实例；</li>
+<li>提供一个公有的获取静态实例的静态方法；</li>
 </ol>
 <hr>
 <p>最常见的实现方法：</p>
@@ -234,11 +234,11 @@
 <p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202302281303918.png" alt="image-20230228130335782"></p>
 <p>可见，实现模板之后，创建单例方便许多，在需要编写多个单例对象的时候更加方便。</p>
 <h1 id="单例模式的应用场景"><a href="#单例模式的应用场景" class="headerlink" title="单例模式的应用场景"></a>单例模式的应用场景</h1><ol>
-<li> 数据库连接管理：数据库连接池就是一种典型的应用，它维护一个连接池容器，里面存放着所有的数据库连接； </li>
-<li> 线程池：线程池也是一个典型的应用，它维护一个存放所有空闲线程的容器； </li>
-<li>  缓存管理：缓存也是一个典型的应用，它可以将一些常用的数据进行缓存，以提高系统性能； </li>
-<li>  日志管理：日志也是一个典型的应用，它可以将系统运行过程中产生的日志信息进行统一的管理和存储； </li>
-<li>  配置管理：配置也是一个典型的应用，它可以将系统的配置参数进行统一的管理和存储。</li>
+<li>数据库连接管理：数据库连接池就是一种典型的应用，它维护一个连接池容器，里面存放着所有的数据库连接； </li>
+<li>线程池：线程池也是一个典型的应用，它维护一个存放所有空闲线程的容器； </li>
+<li>缓存管理：缓存也是一个典型的应用，它可以将一些常用的数据进行缓存，以提高系统性能； </li>
+<li>日志管理：日志也是一个典型的应用，它可以将系统运行过程中产生的日志信息进行统一的管理和存储； </li>
+<li>配置管理：配置也是一个典型的应用，它可以将系统的配置参数进行统一的管理和存储。</li>
 </ol>
 <p>应用场景的话，之后有时间再把写的代码挂上来。</p>
 
@@ -472,6 +472,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -516,6 +524,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -524,15 +536,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +552,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,6 +561,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,15 +584,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

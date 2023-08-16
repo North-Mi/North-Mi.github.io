@@ -152,6 +152,342 @@
             
 
   
+    <article id="post-利用C语言在Linux下的文件操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" target="_blank">利用C语言在Linux下的文件操作</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+        <time datetime="2022-03-01T15:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="标题：利用-C-语言在-Linux-下的文件操作（打开、读写、关闭）"><a href="#标题：利用-C-语言在-Linux-下的文件操作（打开、读写、关闭）" class="headerlink" title="标题：利用 C 语言在 Linux 下的文件操作（打开、读写、关闭）"></a>标题：利用 C 语言在 Linux 下的文件操作（打开、读写、关闭）</h1><hr>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>Linux系统下，万物皆为文件，所以对文件的操作是很重要的。</p>
+<p>在使用 C 语言对 Linux 系统下的文件进行读写时，基本步骤如下：</p>
+<ol>
+<li><p>打开文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	*	@pathname：字符串，带有路径的文件名</span></span><br><span class="line"><span class="comment">	*	@flags：整型变量，有宏定义如下</span></span><br><span class="line"><span class="comment">	*			O_RDONLY	只读打开</span></span><br><span class="line"><span class="comment">	*			O_WRONLY	只写打开</span></span><br><span class="line"><span class="comment">	*			O_RDWR		可读可写</span></span><br><span class="line"><span class="comment">	*			O_TURNC		截断，打开文件，并清空文件内容</span></span><br><span class="line"><span class="comment">	*			O_CREAT		创建，如果文件不存在则创建再打开，存在则直接打开</span></span><br><span class="line"><span class="comment">	*	返回值：</span></span><br><span class="line"><span class="comment">	*		-1：打开文件失败</span></span><br><span class="line"><span class="comment">	*		一个 &gt;= 3 的正整数：打开文件成功，返回文件标识符</span></span><br><span class="line"><span class="comment">	*</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/03/01/%E5%88%A9%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%9C%A8Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于stm32项目文件结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_blank">关于stm32项目文件结构————新建文件夹</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" class="archive-article-date">
+        <time datetime="2022-02-25T13:20:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="标题：关于-stm32-的文件结构——新建文件夹"><a href="#标题：关于-stm32-的文件结构——新建文件夹" class="headerlink" title="标题：关于 stm32 的文件结构——新建文件夹"></a>标题：关于 stm32 的文件结构——新建文件夹</h2><hr>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>这周开的实训，是用 stm32 进行的，这给本来就想学习 stm32 开发的我一个入门的机会。</p>
+<p>之前有看过一些 stm32 开发的教学视频，虽然据说之后新开项目的时候直接用模板复制一份就行，但个人觉得第一次建立项目结构、模板的时候有必要好好理解一下，不然只能照本宣科，也对导库什么的难以理解。</p>
+<p>就 stm32 而言，其新建工程一般需要导入一些固件库来配置芯片，才能方便我们开发。</p>
+<p> 我们需要导入的文件中都需要从固件库中寻找，大致含有一下几种文件：</p>
+    
+    <a class="article-more-a" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单片机</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stm32</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/02/25/%E5%85%B3%E4%BA%8Estm32%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" target="_blank">我的第一篇博客</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+        <time datetime="2022-01-23T05:29:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-23</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><hr>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始框</span><br><span class="line">op=&gt;operation: 处理框</span><br><span class="line">cond=&gt;condition: 判断框(是或否?)</span><br><span class="line">sub1=&gt;subroutine: 子流程</span><br><span class="line">io=&gt;inputoutput: 输入输出框</span><br><span class="line">e=&gt;end: 结束框</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<pre class="mermaid">graph LR
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+    F[横向流程图]</pre>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Title: 标题：复杂使用</span><br><span class="line">对象A-&gt;对象B: 对象B你好吗?（请求）</span><br><span class="line">Note right of 对象B: 对象B的描述</span><br><span class="line">Note left of 对象A: 对象A的描述(提示)</span><br><span class="line">对象B--&gt;对象A: 我很好(响应)</span><br><span class="line">对象B-&gt;小三: 你好吗</span><br><span class="line">小三--&gt;&gt;对象A: 对象B找我了</span><br><span class="line">对象A-&gt;对象B: 你真的好吗？</span><br><span class="line">Note over 小三,对象B: 我们是朋友</span><br><span class="line">participant C</span><br><span class="line">Note right of C: 没人陪我玩</span><br></pre></td></tr></table></figure>
+
+<pre class="mermaid">%% 时序图例子,-> 直线，-->虚线，->>实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三->王五: 王五你好吗？
+    loop 健康检查
+        王五->王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 <br/>看医生...
+    李四-->>张三: 很好!
+    王五->李四: 你怎么样?
+    李四-->王五: 很好!</pre>
+
+<pre class="mermaid">%% 语法示例
+        gantt
+        dateFormat  YYYY-MM-DD
+        title 软件开发甘特图
+        section 设计
+        需求                      :done,    des1, 2014-01-06,2014-01-08
+        原型                      :active,  des2, 2014-01-09, 3d
+        UI设计                     :         des3, after des2, 5d
+    未来任务                     :         des4, after des3, 5d
+        section 开发
+        学习准备理解需求                      :crit, done, 2014-01-06,24h
+        设计框架                             :crit, done, after des2, 2d
+        开发                                 :crit, active, 3d
+        未来任务                              :crit, 5d
+        耍                                   :2d
+        section 测试
+        功能测试                              :active, a1, after des3, 3d
+        压力测试                               :after a1  , 20h
+        测试报告                               : 48h</pre>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -301,6 +637,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -345,6 +689,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -353,15 +701,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,11 +717,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -386,6 +726,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,15 +749,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

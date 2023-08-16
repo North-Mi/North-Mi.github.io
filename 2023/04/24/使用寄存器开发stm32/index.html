@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="使用寄存器操作 stm32 需要读 stm32 的使用文档，对于此种开发方法，较为费事费力，但是代码运行效率更高，且更能帮助我们学习 stm32 的部分底层原理与结构。 基本步骤：   首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；  查看手册，了解 GPIO A 在 stm32 的地址：       理解相关硬件的控制原理，如：s">
+  <meta name="description" content="使用寄存器操作 stm32 需要读 stm32 的使用文档，对于此种开发方法，较为费事费力，但是代码运行效率更高，且更能帮助我们学习 stm32 的部分底层原理与结构。 基本步骤：  首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；  查看手册，了解 GPIO A 在 stm32 的地址：    理解相关硬件的控制原理，如：stm32">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用寄存器开发stm32">
 <meta property="og:url" content="https://north-mi.github.io/2023/04/24/%E4%BD%BF%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E5%BC%80%E5%8F%91stm32/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
-<meta property="og:description" content="使用寄存器操作 stm32 需要读 stm32 的使用文档，对于此种开发方法，较为费事费力，但是代码运行效率更高，且更能帮助我们学习 stm32 的部分底层原理与结构。 基本步骤：   首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；  查看手册，了解 GPIO A 在 stm32 的地址：       理解相关硬件的控制原理，如：s">
+<meta property="og:description" content="使用寄存器操作 stm32 需要读 stm32 的使用文档，对于此种开发方法，较为费事费力，但是代码运行效率更高，且更能帮助我们学习 stm32 的部分底层原理与结构。 基本步骤：  首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；  查看手册，了解 GPIO A 在 stm32 的地址：    理解相关硬件的控制原理，如：stm32">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242052440.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242119633.png">
@@ -204,15 +204,15 @@
     <p>使用寄存器操作 stm32 需要读 stm32 的使用文档，对于此种开发方法，较为费事费力，但是代码运行效率更高，且更能帮助我们学习 stm32 的部分底层原理与结构。</p>
 <p>基本步骤：</p>
 <ol>
-<li><p> 首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；</p>
+<li><p>首先了解自己的需求，需要配置那些外设，例如我需要配置 GPIO A 的 0 号引脚去点亮 LED （经典点灯）；</p>
 </li>
 <li><p>查看手册，了解 GPIO A 在 stm32 的地址：</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242052440.png" alt="image-20230424205235323"></p>
-<p> <img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242119633.png" alt="image-20230424211951514"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242052440.png" alt="image-20230424205235323"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/North-Mi/note.img/202304242119633.png" alt="image-20230424211951514"></p>
 </li>
-<li><p> 理解相关硬件的控制原理，如：stm32 GPIO 点灯是靠输出点灯，一般要驱动设备的话就使用推挽输出；</p>
+<li><p>理解相关硬件的控制原理，如：stm32 GPIO 点灯是靠输出点灯，一般要驱动设备的话就使用推挽输出；</p>
 </li>
-<li><p> 到手册相关位置看相关的说明；</p>
+<li><p>到手册相关位置看相关的说明；</p>
 </li>
 </ol>
 <p>在充分了解原理与需求之后，接下来就是码代码了：</p>
@@ -449,6 +449,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -493,6 +501,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -501,15 +513,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +529,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +538,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +561,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

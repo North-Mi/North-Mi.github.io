@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="关于 C++ 类型转换C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。  强制类型转换  C++ 在 C 的基础上增加了一种形式：">
+  <meta name="description" content="关于 C++ 类型转换C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。  强制类型转换 C++ 在 C 的基础上增加了一种形式：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++的类型转换">
 <meta property="og:url" content="https://north-mi.github.io/2022/08/26/c-%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="NorthMi 的 Blog">
-<meta property="og:description" content="关于 C++ 类型转换C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。  强制类型转换  C++ 在 C 的基础上增加了一种形式：">
+<meta property="og:description" content="关于 C++ 类型转换C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。  强制类型转换 C++ 在 C 的基础上增加了一种形式：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-26T10:19:01.000Z">
 <meta property="article:modified_time" content="2022-08-26T13:15:23.129Z">
@@ -178,7 +178,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">496字</span>
+      <span class="post-count">497字</span>
     </span>
   </span>
 
@@ -201,19 +201,19 @@
     <h1 id="关于-C-类型转换"><a href="#关于-C-类型转换" class="headerlink" title="关于 C++ 类型转换"></a>关于 C++ 类型转换</h1><p>C++ 兼容 C 语言，所以在 C 语言中的强制类型转换依旧可以直接使用。</p>
 <ol>
 <li><p>强制类型转换</p>
-<p> C++ 在 C 的基础上增加了一种形式：</p>
- <span id="more"></span>
+<p>C++ 在 C 的基础上增加了一种形式：</p>
+<span id="more"></span>
 
-<p> ​    类型（数据）；</p>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> c = (<span class="keyword">int</span>)a;<span class="comment">//或者 c = int(a); 也能正确编译通过，运行</span></span><br></pre></td></tr></table></figure>
+<p>​	类型（数据）；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> c = (<span class="keyword">int</span>)a;<span class="comment">//或者 c = int(a); 也能正确编译通过，运行</span></span><br></pre></td></tr></table></figure>
 
-<p> c 输出为 ASCII 码为 100 的字符，即 ‘d’。</p>
-<p> 那么，谈到 C 和 C++，绕不开的就是指针了。</p>
-<p> 指针也能进行类型转换：</p>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span>* pa = &amp;a;</span><br><span class="line">cout &lt;&lt; *pa &lt;&lt;endl;</span><br><span class="line"><span class="keyword">char</span>* c = (<span class="keyword">char</span>*)pa;</span><br></pre></td></tr></table></figure>
+<p>c 输出为 ASCII 码为 100 的字符，即 ‘d’。</p>
+<p>那么，谈到 C 和 C++，绕不开的就是指针了。</p>
+<p>指针也能进行类型转换：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span>* pa = &amp;a;</span><br><span class="line">cout &lt;&lt; *pa &lt;&lt;endl;</span><br><span class="line"><span class="keyword">char</span>* c = (<span class="keyword">char</span>*)pa;</span><br></pre></td></tr></table></figure>
 
-<p> 在上述转换中，pa 指向 a 之后，又将 pa 存储（指向）的地址赋值给 c；</p>
-<p> 此时 c 输出的依旧是 ‘d’。</p>
+<p>在上述转换中，pa 指向 a 之后，又将 pa 存储（指向）的地址赋值给 c；</p>
+<p>此时 c 输出的依旧是 ‘d’。</p>
 <blockquote>
 <p>  注：</p>
 <p>  void* 是被严格限制的，不能赋值给其他地址类型。</p>
@@ -222,22 +222,25 @@
 </blockquote>
 </li>
 <li><p>C++ 提供的另外几种类型转换</p>
-<p> (1). static_cast&lt;类型&gt;（数据）</p>
-<p> ​    用于数据类型之间以及 void* 和别的 * 类型之间的转换。</p>
-<p> (2). reinterpret_cast&lt;类型&gt;（数据）</p>
-<p> ​    用于数据类型与地址类型之间，或者地址类型与地址类型之间的转换。</p>
-<p> (3). const_cast&lt;T*&gt;（T 常量的地址）</p>
-<p> ​    去掉对目标地址所指向的目标的 const 限制。</p>
-<p> ​    用于对 const 常量的值进行改动。</p>
-<p> ​    </p>
-<p> (4). dynamic_cast</p>
-<p> ​    (后续补充)</p>
+<p>(1). static_cast&lt;类型&gt;（数据）</p>
+<p>​	用于数据类型之间以及 void* 和别的 * 类型之间的转换。</p>
+<p>(2). reinterpret_cast&lt;类型&gt;（数据）</p>
+<p>​	用于数据类型与地址类型之间，或者地址类型与地址类型之间的转换。</p>
+<p>(3). const_cast&lt;T*&gt;（T 常量的地址）</p>
+<p>​	去掉对目标地址所指向的目标的 const 限制。</p>
+<p>​	用于对 const 常量的值进行改动。</p>
+<p>​	</p>
+<p>(4). dynamic_cast</p>
+<p>​	(后续补充)</p>
 <blockquote>
-<p>  注： </p>
-<p>  C++ 中尽量不用类型转换，如果要转换的话，那尽量使用以上 4 种方法，而不是强制转换。</p>
+<p>  注：</p>
 </blockquote>
 </li>
 </ol>
+<blockquote>
+</blockquote>
+<pre><code>&gt;   C++ 中尽量不用类型转换，如果要转换的话，那尽量使用以上 4 种方法，而不是强制转换。
+</code></pre>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 类型转换</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//static_cast&lt;&gt;()</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">123.45</span>);</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">void</span>* p = &amp;b;</span><br><span class="line">    <span class="keyword">int</span>* q = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>*&gt;(p);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//reinterpret_cast&lt;&gt;()</span></span><br><span class="line">    <span class="keyword">char</span>* r = <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">char</span>*&gt;(q);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;r = &quot;</span> &lt;&lt; r &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// const_cast&lt;&gt;()</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> c = b;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;c = &quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    *<span class="keyword">const_cast</span>&lt;<span class="keyword">int</span>*&gt;(&amp;c) = <span class="number">200</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;c = &quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -456,6 +459,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -500,6 +511,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -508,15 +523,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +539,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,6 +548,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,15 +571,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">

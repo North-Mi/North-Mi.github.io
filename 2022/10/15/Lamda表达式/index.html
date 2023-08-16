@@ -181,7 +181,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">610字</span>
+      <span class="post-count">613字</span>
     </span>
   </span>
 
@@ -212,19 +212,19 @@
 <span id="more"></span>
 
 <ul>
-<li><p>  [] 不捕获任何变量。</p>
+<li><p>[] 不捕获任何变量。</p>
 </li>
-<li><p>  [&amp;] 捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。</p>
+<li><p>[&amp;] 捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。</p>
 </li>
-<li><p>[=] 捕获外部作用域中所有变量，并作为副本在函数体中使用（按值捕获）。</p>
-<p>  按值传递：若想修改，需要在 <strong>小括号</strong> 后面加上 **mutable ** （opt 的一种）</p>
-<p>  修改的是 copy 值，而不是 本体</p>
+<li><p>[&#x3D;] 捕获外部作用域中所有变量，并作为副本在函数体中使用（按值捕获）。</p>
+<p>按值传递：若想修改，需要在 <strong>小括号</strong> 后面加上 **mutable ** （opt 的一种）</p>
+<p>修改的是 copy 值，而不是 本体</p>
 </li>
-<li><p>  [=，&amp;foo] 按值捕获外部作用域中所有变量，并按引用捕获 foo 变量。</p>
+<li><p>[&#x3D;，&amp;foo] 按值捕获外部作用域中所有变量，并按引用捕获 foo 变量。</p>
 </li>
-<li><p>  [bar] 按值捕获 bar 变量，同时不捕获其他变量。</p>
+<li><p>[bar] 按值捕获 bar 变量，同时不捕获其他变量。</p>
 </li>
-<li><p>  [this] 捕获当前类中的 this <a target="_blank" rel="noopener" href="http://c.biancheng.net/c/80/">指针</a>，让 lambda 表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 &amp; 或者 =，就默认添加此选项。捕获 this 的目的是可以在 lamda 中使用当前类的成员函数和成员变量。</p>
+<li><p>[this] 捕获当前类中的 this <a target="_blank" rel="noopener" href="http://c.biancheng.net/c/80/">指针</a>，让 lambda 表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 &amp; 或者 &#x3D;，就默认添加此选项。捕获 this 的目的是可以在 lamda 中使用当前类的成员函数和成员变量。</p>
 </li>
 </ul>
 <blockquote>
@@ -465,6 +465,14 @@
 </script>
 
 
+
+	<script src='https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -509,6 +517,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -517,15 +529,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+                <a href="javascript:void(0)" class="js-tag color4">多进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,11 +545,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,6 +554,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">嵌入式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stm32</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,15 +577,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">想说的话</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">通信方式</a>
               </li>
              
               <li class="article-tag-list-item">
